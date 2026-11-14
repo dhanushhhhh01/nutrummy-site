@@ -1,85 +1,66 @@
 import React from "react";
-import {
-  VerticalTimeline,
-  VerticalTimelineElement,
-} from "react-vertical-timeline-component";
+import { VerticalTimeline, VerticalTimelineElement } from "react-vertical-timeline-component";
 import { motion } from "framer-motion";
 
 import "react-vertical-timeline-component/style.min.css";
 
 import { styles } from "../styles";
-import { experiences } from "../constants";
+import { moments } from "../constants";
 import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
+import Icon from "./Icon";
 
-const ExperienceCard = ({ experience }) => {
-  return (
-    <VerticalTimelineElement
-      contentStyle={{
-        background: "#1d1836",
-        color: "#fff",
-      }}
-      contentArrowStyle={{ borderRight: "7px solid  #232631" }}
-      date={experience.date}
-      iconStyle={{ background: experience.iconBg }}
-      icon={
-        <div className='flex justify-center items-center w-full h-full'>
-          <img
-            src={experience.icon}
-            alt={experience.company_name}
-            className='w-[60%] h-[60%] object-contain'
-          />
-        </div>
-      }
-    >
-      <div>
-        <h3 className='text-white text-[24px] font-bold'>{experience.title}</h3>
-        <p
-          className='text-secondary text-[16px] font-semibold'
-          style={{ margin: 0 }}
-        >
-          {experience.company_name}
-        </p>
+const MomentCard = ({ moment }) => (
+  <VerticalTimelineElement
+    contentStyle={{
+      background: "#24150b",
+      color: "#fff4e0",
+      boxShadow: "none",
+      border: "1px solid rgba(255,255,255,0.07)",
+      borderRadius: 16,
+      padding: "24px 26px",
+    }}
+    contentArrowStyle={{ borderRight: "7px solid #3a2414" }}
+    date={moment.time}
+    iconStyle={{ background: "#24150b", color: "#F5B82E", boxShadow: "0 0 0 2px #F5B82E, 0 0 0 7px #120a05" }}
+    icon={
+      <div className='flex justify-center items-center w-full h-full'>
+        <Icon name={moment.icon} className='w-[45%] h-[45%]' />
       </div>
+    }
+  >
+    <p className='text-[12px] uppercase tracking-[0.2em] text-gold font-semibold' style={{ margin: 0 }}>
+      {moment.tag}
+    </p>
+    <h3 className='font-display text-cream text-[22px] font-semibold mt-2'>{moment.title}</h3>
+    <ul className='mt-4 space-y-2.5'>
+      {moment.points.map((point, i) => (
+        <li key={i} className='flex gap-2.5 text-secondary text-[14px] leading-[22px]'>
+          <Icon name='check' className='w-4 h-4 mt-[3px] text-gold shrink-0' strokeWidth={2.25} />
+          {point}
+        </li>
+      ))}
+    </ul>
+  </VerticalTimelineElement>
+);
 
-      <ul className='mt-5 list-disc ml-5 space-y-2'>
-        {experience.points.map((point, index) => (
-          <li
-            key={`experience-point-${index}`}
-            className='text-white-100 text-[14px] pl-1 tracking-wider'
-          >
-            {point}
-          </li>
+const Experience = () => (
+  <>
+    <motion.div variants={textVariant()} className='text-center'>
+      <p className={styles.sectionSubText}>From sunrise to late night</p>
+      <h2 className={`${styles.sectionHeadText} mt-3`}>
+        Built for <span className='text-gold'>every part</span> of the day.
+      </h2>
+    </motion.div>
+
+    <div className='mt-16 flex flex-col'>
+      <VerticalTimeline lineColor='#F5B82E'>
+        {moments.map((m) => (
+          <MomentCard key={m.time} moment={m} />
         ))}
-      </ul>
-    </VerticalTimelineElement>
-  );
-};
+      </VerticalTimeline>
+    </div>
+  </>
+);
 
-const Experience = () => {
-  return (
-    <>
-      <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} text-center`}>
-          What I have done so far
-        </p>
-        <h2 className={`${styles.sectionHeadText} text-center`}>
-          Work Experience.
-        </h2>
-      </motion.div>
-
-      <div className='mt-20 flex flex-col'>
-        <VerticalTimeline>
-          {experiences.map((experience, index) => (
-            <ExperienceCard
-              key={`experience-${index}`}
-              experience={experience}
-            />
-          ))}
-        </VerticalTimeline>
-      </div>
-    </>
-  );
-};
-
-export default SectionWrapper(Experience, "work");
+export default SectionWrapper(Experience, "day");

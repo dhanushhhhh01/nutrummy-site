@@ -1,265 +1,239 @@
-import {
-  mobile,
-  backend,
-  creator,
-  web,
-  javascript,
-  typescript,
-  html,
-  css,
-  reactjs,
-  redux,
-  tailwind,
-  nodejs,
-  mongodb,
-  git,
-  figma,
-  docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
-  carrent,
-  jobit,
-  tripguide,
-  threejs,
-} from "../assets";
-
 export const navLinks = [
+  { id: "story", title: "Our Story" },
+  { id: "products", title: "Products" },
+  { id: "compare", title: "Nutrition" },
+  { id: "partners", title: "Partners" },
+  { id: "contact", title: "Contact" },
+];
+
+export const heroStats = [
+  { value: "35g", label: "Lupin protein / 100g" },
+  { value: "0g", label: "Refined sugar" },
+  { value: "100%", label: "Whole grain, zero maida" },
+];
+
+export const claims = [
+  "35g Lupin Protein",
+  "22g Prebiotic Fibre",
+  "Zero Refined Sugar",
+  "Zero Maida",
+  "No Artificial Preservatives",
+  "Clean, Honest Labels",
+];
+
+export const benefits = [
   {
-    id: "about",
-    title: "About",
+    title: "35g Lupin Protein",
+    icon: "zap",
+    text: "Per 100g, from a whole golden legume. No whey isolates.",
   },
   {
-    id: "work",
-    title: "Work",
+    title: "22g Prebiotic Fibre",
+    icon: "sprout",
+    text: "Gut-friendly fibre that keeps you full past mid-morning.",
   },
   {
-    id: "contact",
-    title: "Contact",
+    title: "0g Refined Sugar",
+    icon: "leaf",
+    text: "Sweetened with monk fruit. No mid-morning sugar crash.",
+  },
+  {
+    title: "Zero Maida",
+    icon: "shield",
+    text: "Whole grains only. Ingredients you can actually name.",
   },
 ];
 
-const services = [
+export const moments = [
   {
-    title: "Web Developer",
-    icon: web,
-  },
-  {
-    title: "React Native Developer",
-    icon: mobile,
-  },
-  {
-    title: "Backend Developer",
-    icon: backend,
-  },
-  {
-    title: "Content Creator",
-    icon: creator,
-  },
-];
-
-const technologies = [
-  {
-    name: "HTML 5",
-    icon: html,
-  },
-  {
-    name: "CSS 3",
-    icon: css,
-  },
-  {
-    name: "JavaScript",
-    icon: javascript,
-  },
-  {
-    name: "TypeScript",
-    icon: typescript,
-  },
-  {
-    name: "React JS",
-    icon: reactjs,
-  },
-  {
-    name: "Redux Toolkit",
-    icon: redux,
-  },
-  {
-    name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Node JS",
-    icon: nodejs,
-  },
-  {
-    name: "MongoDB",
-    icon: mongodb,
-  },
-  {
-    name: "Three JS",
-    icon: threejs,
-  },
-  {
-    name: "git",
-    icon: git,
-  },
-  {
-    name: "figma",
-    icon: figma,
-  },
-  {
-    name: "docker",
-    icon: docker,
-  },
-];
-
-const experiences = [
-  {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
-    iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    time: "7:30 AM",
+    tag: "Morning jumpstart",
+    title: "Clean Breakfast Ritual",
+    icon: "sunrise",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Swap sugary flakes for 40g of LupiCrunch with cold milk.",
+      "14g+ clean plant protein and 8g fibre to carry you to lunch.",
     ],
   },
   {
-    title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
-    iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    time: "11:30 AM",
+    tag: "Mid-day focus",
+    title: "The Desk-Crunch Snack",
+    icon: "laptop",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Beat the office slump without reaching for junk food.",
+      "A handful straight from the pouch: satisfying, guilt-free crunch.",
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    time: "5:30 PM",
+    tag: "Workout recovery",
+    title: "Pre / Post Gym Fuel",
+    icon: "dumbbell",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Stir High Protein Oats into yogurt with fresh berries.",
+      "22g+ bioavailable protein with complete amino acids for repair.",
     ],
   },
   {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
+    time: "9:30 PM",
+    tag: "Evening craving",
+    title: "Late Night Cocoa Bowl",
+    icon: "moon",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Rich dark cocoa notes, naturally sweetened with monk fruit.",
+      "No added white sugar, so no sleep-disrupting insulin spike.",
     ],
   },
 ];
 
-const testimonials = [
-  {
-    testimonial:
-      "I thought it was impossible to make a website as beautiful as our product, but Rick proved me wrong.",
-    name: "Sara Lee",
-    designation: "CFO",
-    company: "Acme Co",
-    image: "https://randomuser.me/api/portraits/women/4.jpg",
-  },
-  {
-    testimonial:
-      "I've never met a web developer who truly cares about their clients' success like Rick does.",
-    name: "Chris Brown",
-    designation: "COO",
-    company: "DEF Corp",
-    image: "https://randomuser.me/api/portraits/men/5.jpg",
-  },
-  {
-    testimonial:
-      "After Rick optimized our website, our traffic increased by 50%. We can't thank them enough!",
-    name: "Lisa Wang",
-    designation: "CTO",
-    company: "456 Enterprises",
-    image: "https://randomuser.me/api/portraits/women/6.jpg",
-  },
+// Rendered as "periodic table" tiles on the 3D spheres.
+export const ingredients = [
+  { name: "Sweet Lupin", symbol: "Lu", stat: "35% protein", color: "#F5B82E" },
+  { name: "Ancient Multigrains", symbol: "Mg", stat: "30% blend", color: "#E8C98F" },
+  { name: "California Almonds", symbol: "Al", stat: "Roasted", color: "#C98B55" },
+  { name: "Rich Cocoa", symbol: "Co", stat: "Solids", color: "#8A5530" },
+  { name: "Monk Fruit", symbol: "Mf", stat: "0 sugar", color: "#B9CF7A" },
+  { name: "Chia & Seeds", symbol: "Cs", stat: "Omega-3", color: "#DCCFBE" },
 ];
 
-const projects = [
+export const products = [
   {
-    name: "Car Rent",
+    name: "LupiCrunch High Protein Muesli",
+    short: ["Lupi", "CRUNCH"],
+    category: "Muesli",
+    badge: "Bestseller",
+    tagline: "Crunchy nutrition in every bowl",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "mongodb",
-        color: "green-text-gradient",
-      },
-      {
-        name: "tailwind",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+      "Chocolate muesli with Lupin super legume, 30% multigrains, roasted almonds and monk fruit sweetness.",
+    protein: "35g",
+    price: "₹349",
+    packs: "200g · 500g",
+    body: "#3d2210",
+    accent: "#F5B82E",
+    tags: ["35g protein", "0g added sugar", "Chocolate"],
   },
   {
-    name: "Job IT",
+    name: "High Protein Oats",
+    short: ["Protein", "OATS"],
+    category: "Oats",
+    badge: "Popular",
+    tagline: "Clean, sustained energy",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
-    tags: [
-      {
-        name: "react",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "restapi",
-        color: "green-text-gradient",
-      },
-      {
-        name: "scss",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: jobit,
-    source_code_link: "https://github.com/",
+      "Whole rolled oats with Lupin protein, cocoa, berries and seeds for warm bowls and overnight jars.",
+    protein: "35g",
+    price: "₹199",
+    packs: "100g · 400g",
+    body: "#4a1a24",
+    accent: "#F2C6CF",
+    tags: ["35g protein", "No preservatives", "Whole grain"],
   },
   {
-    name: "Trip Guide",
+    name: "Protein Cookie Premix",
+    short: ["Cookie", "PREMIX"],
+    category: "Bake mixes",
+    badge: "New launch",
+    tagline: "Secretly protein packed",
     description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
-      {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: tripguide,
-    source_code_link: "https://github.com/",
+      "Bake chewy double-dark chocolate cookies at home in 10 minutes. No maida, no refined white sugar.",
+    protein: "21g",
+    price: "₹279",
+    packs: "250g · 500g",
+    body: "#2b1a12",
+    accent: "#E3B98A",
+    tags: ["21g protein", "Zero maida", "Double dark"],
+  },
+  {
+    name: "Pancake & Waffle Mix",
+    short: ["Pancake", "& WAFFLE"],
+    category: "Bake mixes",
+    badge: "Trending",
+    tagline: "Weekend café, weekday effort",
+    description:
+      "Fluffy golden pancake stacks and crisp Belgian waffles in 3 minutes. No artificial colours.",
+    protein: "17g",
+    price: "₹299",
+    packs: "250g · 500g",
+    body: "#5a3b0c",
+    accent: "#FFE3A3",
+    tags: ["17g protein", "No added sugar", "Vanilla"],
   },
 ];
 
-export { services, technologies, experiences, testimonials, projects };
+export const comparison = [
+  { factor: "Protein per 100g", us: 35, them: 7, max: 40, usLabel: "35g", themLabel: "6–8g", callout: "5.8× more protein" },
+  { factor: "Prebiotic fibre per 100g", us: 22, them: 3, max: 25, usLabel: "22g", themLabel: "2.5–4g", callout: "8.8× more fibre" },
+  { factor: "Added table sugar per 100g", us: 0, them: 25, max: 30, usLabel: "0g", themLabel: "22–28g", callout: "Zero sugar spike" },
+  { factor: "Refined maida", us: 0, them: 50, max: 60, usLabel: "0%", themLabel: "Up to 50%", callout: "100% real food" },
+];
+
+export const recipes = [
+  {
+    title: "Choco-Lupin Acai Superbowl",
+    time: "3 mins",
+    protein: "24g",
+    text: "Chilled greek yogurt or acai topped with LupiCrunch, strawberries, blueberries and hemp seeds.",
+    highlights: ["High protein", "Gut friendly"],
+  },
+  {
+    title: "Overnight Raspberry Oats Jar",
+    time: "2 mins + overnight",
+    protein: "28g",
+    text: "Layer High Protein Oats with almond milk, chia and raspberries. Wake up to breakfast, done.",
+    highlights: ["Grab & go", "Prebiotic fibre"],
+  },
+  {
+    title: "Crispy Belgian Protein Waffles",
+    time: "5 mins",
+    protein: "22g",
+    text: "Whisk the mix with milk, pour into a hot iron until golden. Finish with blueberries and raw honey.",
+    highlights: ["Weekend brunch", "Kid approved"],
+  },
+  {
+    title: "Soft-Baked Double Choco Cookies",
+    time: "10 mins bake",
+    protein: "21g",
+    text: "Stir the premix with butter or coconut oil, scoop and bake. Crisp rim, gooey fudge centre.",
+    highlights: ["Snack pack", "Sweet-tooth fix"],
+  },
+];
+
+export const partners = [
+  {
+    icon: "store",
+    title: "Retail & Distribution",
+    text: "Stock NUTRUMMY in your store, café or gym. Trade pricing, POS material and reliable replenishment.",
+    cta: "Become a stockist",
+    topic: "Retail & distribution",
+  },
+  {
+    icon: "gift",
+    title: "Corporate Gifting",
+    text: "Curated breakfast hampers for teams, clients and events, with custom branding on request.",
+    cta: "Plan a gifting order",
+    topic: "Bulk & corporate gifting",
+  },
+  {
+    icon: "truck",
+    title: "Bulk & Institutional",
+    text: "Pantry supply for offices, hostels and wellness programmes, delivered on a schedule that suits you.",
+    cta: "Request a bulk quote",
+    topic: "Bulk & corporate gifting",
+  },
+];
+
+export const contactInfo = {
+  company: "Lupi Foods Pvt Ltd",
+  address: "Bengaluru, Karnataka, India",
+  email: "contact@nutrummy.com",
+  phone: "+91 98765 43210",
+  hours: "Mon – Sat · 9:00 AM – 6:00 PM IST",
+};
+
+export const enquiryTypes = [
+  "Retail & distribution",
+  "Bulk & corporate gifting",
+  "Ingredients & nutrition question",
+  "Product enquiry",
+  "Feedback or just saying hi",
+];

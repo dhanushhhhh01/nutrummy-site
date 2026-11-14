@@ -1,48 +1,89 @@
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
-import { ComputersCanvas } from "./canvas";
+import { claims, heroStats } from "../constants";
+import { BowlCanvas } from "./canvas";
+import Icon from "./Icon";
 
 const Hero = () => {
   return (
-    <section className={`relative w-full h-screen mx-auto`}>
+    <section className='relative w-full min-h-[100svh] lg:h-screen mx-auto overflow-hidden'>
       <div
-        className={`absolute inset-0 top-[120px]  max-w-7xl mx-auto ${styles.paddingX} flex flex-row items-start gap-5`}
+        className={`relative max-w-7xl mx-auto ${styles.paddingX} pt-[112px] lg:pt-[150px] flex flex-row items-start gap-5 pointer-events-none`}
       >
-        <div className='flex flex-col justify-center items-center mt-5'>
-          <div className='w-5 h-5 rounded-full bg-[#915EFF]' />
-          <div className='w-1 sm:h-80 h-40 violet-gradient' />
+        <div className='hidden sm:flex flex-col justify-center items-center mt-3'>
+          <div className='w-3.5 h-3.5 rounded-full bg-gold' />
+          <div className='w-[2px] sm:h-80 h-40 gold-gradient rotate-180' />
         </div>
 
-        <div>
-          <h1 className={`${styles.heroHeadText} text-white`}>
-            Hi, I'm <span className='text-[#915EFF]'>Adrian</span>
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className='lg:max-w-[540px] pointer-events-auto'
+        >
+          <div className='inline-flex items-center gap-2 text-[13px] text-cream bg-white/[0.04] border border-white/10 rounded-full pl-2 pr-4 py-1.5 mb-7'>
+            <span className='flex text-gold'>
+              {[...Array(5)].map((_, i) => (
+                <Icon key={i} name='star' filled className='w-3.5 h-3.5' strokeWidth={0} />
+              ))}
+            </span>
+            <span className='font-medium'>4.9 / 5</span>
+            <span className='text-secondary'>· 1,200+ bowls loved</span>
+          </div>
+
+          <h1 className={styles.heroHeadText}>
+            Make your <span className='text-gold'>mornings</span> matter.
           </h1>
-          <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I develop 3D visuals, user <br className='sm:block hidden' />
-            interfaces and web applications
+
+          <p className={`${styles.heroSubText} mt-6 max-w-[480px]`}>
+            High-protein breakfasts and bakes made with ancient{" "}
+            <span className='text-cream font-medium'>Sweet Lupin</span>. 35g plant protein,
+            prebiotic fibre, 0g refined sugar and zero maida.
           </p>
-        </div>
+
+          <div className='mt-9 flex flex-wrap gap-3'>
+            <a
+              href='#products'
+              className='inline-flex items-center gap-2 bg-gold text-primary font-semibold px-7 py-3.5 rounded-full hover:bg-cream transition-colors'
+            >
+              Explore products <Icon name='arrow' className='w-4 h-4' strokeWidth={2.25} />
+            </a>
+            <a
+              href='#partners'
+              className='border border-cream/25 text-cream font-medium px-7 py-3.5 rounded-full hover:border-gold hover:text-gold transition-colors'
+            >
+              Partner with us
+            </a>
+          </div>
+
+          <dl className='mt-12 hidden xs:grid grid-cols-3 gap-6 max-w-[480px] border-t border-white/10 pt-6 [@media(max-height:780px)]:hidden'>
+            {heroStats.map((s) => (
+              <div key={s.label}>
+                <dt className='sr-only'>{s.label}</dt>
+                <dd className='font-display text-[30px] font-bold text-cream leading-none'>{s.value}</dd>
+                <dd className='text-[12px] text-secondary mt-2 leading-snug'>{s.label}</dd>
+              </div>
+            ))}
+          </dl>
+        </motion.div>
       </div>
 
-      <ComputersCanvas />
+      {/* 3D bowl scene: below the copy on phones, beside it on desktop */}
+      <div className='relative w-full h-[340px] sm:h-[420px] mb-14 lg:mb-0 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[58%] lg:h-full'>
+        <BowlCanvas />
+      </div>
 
-      <div className='absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center'>
-        <a href='#about'>
-          <div className='w-[35px] h-[64px] rounded-3xl border-4 border-secondary flex justify-center items-start p-2'>
-            <motion.div
-              animate={{
-                y: [0, 24, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                repeatType: "loop",
-              }}
-              className='w-3 h-3 rounded-full bg-secondary mb-1'
-            />
-          </div>
-        </a>
+      {/* Claims strip */}
+      <div className='absolute bottom-0 inset-x-0 bg-black-200/80 backdrop-blur border-y border-gold/20 py-3.5 overflow-hidden'>
+        <div className='marquee'>
+          {[...claims, ...claims, ...claims, ...claims].map((c, i) => (
+            <span key={i} className='flex items-center text-[12px] font-semibold uppercase tracking-[0.18em] text-cream whitespace-nowrap'>
+              <span className='w-1.5 h-1.5 rounded-full bg-gold mx-7' />
+              {c}
+            </span>
+          ))}
+        </div>
       </div>
     </section>
   );

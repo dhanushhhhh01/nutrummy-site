@@ -3,98 +3,77 @@ import Tilt from "react-tilt";
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
-import { github } from "../assets";
 import { SectionWrapper } from "../hoc";
-import { projects } from "../constants";
+import { products } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
+import ProductArt from "./ProductArt";
+import Icon from "./Icon";
 
-const ProjectCard = ({
-  index,
-  name,
-  description,
-  tags,
-  image,
-  source_code_link,
-}) => {
-  return (
-    <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-      <Tilt
-        options={{
-          max: 45,
-          scale: 1,
-          speed: 450,
-        }}
-        className='bg-tertiary p-5 rounded-2xl sm:w-[360px] w-full'
+const ProductCard = ({ index, name, short, category, badge, tagline, description, protein, price, packs, body, accent, tags }) => (
+  <motion.div variants={fadeIn("up", "spring", index * 0.2, 0.75)} className='h-full'>
+    <Tilt options={{ max: 10, scale: 1.01, speed: 450 }} className={`${styles.card} p-4 h-full flex flex-col`}>
+      <div
+        className='relative w-full h-[230px] rounded-xl overflow-hidden flex items-center justify-center'
+        style={{ background: `radial-gradient(circle at 50% 45%, ${body} 0%, #140b06 78%)` }}
       >
-        <div className='relative w-full h-[230px]'>
-          <img
-            src={image}
-            alt='project_image'
-            className='w-full h-full object-cover rounded-2xl'
-          />
+        <ProductArt id={index} short={short} protein={protein} body={body} accent={accent} />
+        <span className='absolute top-3 left-3 bg-cream text-primary text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-full'>
+          {badge}
+        </span>
+      </div>
 
-          <div className='absolute inset-0 flex justify-end m-3 card-img_hover'>
-            <div
-              onClick={() => window.open(source_code_link, "_blank")}
-              className='black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer'
-            >
-              <img
-                src={github}
-                alt='source code'
-                className='w-1/2 h-1/2 object-contain'
-              />
-            </div>
-          </div>
-        </div>
-
-        <div className='mt-5'>
-          <h3 className='text-white font-bold text-[24px]'>{name}</h3>
-          <p className='mt-2 text-secondary text-[14px]'>{description}</p>
-        </div>
-
-        <div className='mt-4 flex flex-wrap gap-2'>
+      <div className='mt-5 px-1 flex-1'>
+        <p className='text-gold text-[12px] uppercase tracking-[0.18em] font-semibold'>{category}</p>
+        <h3 className='font-display text-cream font-semibold text-[21px] leading-tight mt-1.5'>{name}</h3>
+        <p className='text-cream/80 text-[14px] mt-1'>{tagline}</p>
+        <p className='mt-3 text-secondary text-[14px] leading-[22px]'>{description}</p>
+        <ul className='mt-4 flex flex-wrap gap-1.5'>
           {tags.map((tag) => (
-            <p
-              key={`${name}-${tag.name}`}
-              className={`text-[14px] ${tag.color}`}
-            >
-              #{tag.name}
-            </p>
+            <li key={tag} className='text-[12px] text-cream bg-white/[0.05] border border-white/10 rounded-md px-2 py-0.5'>
+              {tag}
+            </li>
           ))}
+        </ul>
+      </div>
+
+      <div className='mt-5 pt-4 px-1 border-t border-white/10 flex items-end justify-between'>
+        <div>
+          <p className='font-display text-cream font-semibold text-[24px] leading-none'>{price}</p>
+          <p className='text-secondary text-[12px] mt-1.5'>{packs}</p>
         </div>
-      </Tilt>
-    </motion.div>
-  );
-};
-
-const Works = () => {
-  return (
-    <>
-      <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} `}>My work</p>
-        <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>
-      </motion.div>
-
-      <div className='w-full flex'>
-        <motion.p
-          variants={fadeIn("", "", 0.1, 1)}
-          className='mt-3 text-secondary text-[17px] max-w-3xl leading-[30px]'
+        <a
+          href='#contact'
+          aria-label={`Enquire about ${name}`}
+          className='inline-flex items-center gap-1.5 text-gold text-[14px] font-semibold hover:text-cream transition-colors'
         >
-          Following projects showcases my skills and experience through
-          real-world examples of my work. Each project is briefly described with
-          links to code repositories and live demos in it. It reflects my
-          ability to solve complex problems, work with different technologies,
-          and manage projects effectively.
-        </motion.p>
+          Enquire <Icon name='arrow' className='w-4 h-4' strokeWidth={2.25} />
+        </a>
       </div>
+    </Tilt>
+  </motion.div>
+);
 
-      <div className='mt-20 flex flex-wrap gap-7'>
-        {projects.map((project, index) => (
-          <ProjectCard key={`project-${index}`} index={index} {...project} />
-        ))}
-      </div>
-    </>
-  );
-};
+const Works = () => (
+  <>
+    <div className='grid lg:grid-cols-[1fr_1.1fr] gap-x-16 gap-y-6 items-end'>
+      <motion.div variants={textVariant()}>
+        <p className={styles.sectionSubText}>Product range</p>
+        <h2 className={`${styles.sectionHeadText} mt-3`}>
+          A high-protein <span className='text-gold'>pantry.</span>
+        </h2>
+      </motion.div>
+      <motion.p variants={fadeIn("", "", 0.1, 1)} className={styles.body}>
+        Four core categories crafted with Sweet Lupin, clean multigrains and honest nutrition. Up
+        to 35g of protein per 100g, with no maida and no sugar crash.
+      </motion.p>
+    </div>
 
-export default SectionWrapper(Works, "");
+    <div className='mt-14 grid sm:grid-cols-2 lg:grid-cols-4 gap-5'>
+      {products.map((p, index) => (
+        <ProductCard key={p.name} index={index} {...p} />
+      ))}
+    </div>
+  </>
+);
+
+export default SectionWrapper(Works, "products");

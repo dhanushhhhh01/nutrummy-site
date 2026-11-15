@@ -22,7 +22,7 @@ import { CartProvider } from "./context/CartContext";
 
 const App = () => {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
       <CartProvider>
         <div className='relative z-0 bg-primary'>
           <div className='hero-glow grain relative'>

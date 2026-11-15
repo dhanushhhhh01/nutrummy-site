@@ -63,7 +63,7 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src='/logo.svg' alt='' className='w-10 h-10' />
+          <img src={`${import.meta.env.BASE_URL}logo.svg`} alt='' className='w-10 h-10' />
           <div className='leading-none'>
             <p className='font-display text-cream text-[21px] font-extrabold tracking-tight'>NUTRUMMY</p>
             <p className='text-gold text-[10px] font-bold tracking-[0.25em] mt-1'>LUPIN SUPERFOOD</p>

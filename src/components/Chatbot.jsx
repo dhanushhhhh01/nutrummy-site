@@ -175,7 +175,7 @@ const Chatbot = () => {
           >
             <header className='bg-ink text-[#F5F1E8] px-5 py-4 flex items-center justify-between'>
               <div className='flex items-center gap-3'>
-                <img src='/logo.svg' alt='' className='w-9 h-9' />
+                <img src={`${import.meta.env.BASE_URL}logo.svg`} alt='' className='w-9 h-9' />
                 <div>
                   <p className='font-bold text-[15px] leading-tight'>NutriBot</p>
                   <p className='text-[12px] text-[#C9CFDB]'>Instant answers about NUTRUMMY</p>

@@ -27,3 +27,5 @@ dist-ssr
 
 # vscode
 .vscode
+# GitHub Pages build output
+dist-pages

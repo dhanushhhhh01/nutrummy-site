@@ -3,14 +3,14 @@ import React, { useState } from "react";
 import ProductArt from "./ProductArt";
 
 /*
- * Shows the real product photo from public/products/<id>.png when it exists,
- * and falls back to the drawn SVG pouch otherwise. To add or replace a photo,
- * drop a PNG named after the product id (lupicrunch, oats, pancake, cookie)
- * into public/products/. A transparent background looks best.
+ * Real product photo from public/products/<id>.jpg (taken from the NUTRUMMY reference site).
+ * Pack shots (product.imageFit === "contain") are shown whole on white; styled scenes fill the frame.
+ * Falls back to the drawn SVG pouch if a photo is missing.
  */
 const ProductImage = ({ product, size = "card", className = "" }) => {
   const [failed, setFailed] = useState(false);
-  const src = `${import.meta.env.BASE_URL}products/${product.id}.png`;
+  const src = `${import.meta.env.BASE_URL}products/${product.id}.jpg`;
+  const contain = product.imageFit === "contain";
 
   if (failed) {
     if (size === "thumb")
@@ -21,9 +21,6 @@ const ProductImage = ({ product, size = "card", className = "" }) => {
           aria-hidden
         >
           <span className='text-[9px] font-bold text-[#FFF4E0] leading-none'>{product.short[0]}</span>
-          <span className='text-[7px] font-bold tracking-wider mt-0.5' style={{ color: product.accent }}>
-            {product.short[1]}
-          </span>
         </div>
       );
     return (
@@ -37,11 +34,7 @@ const ProductImage = ({ product, size = "card", className = "" }) => {
       alt={size === "thumb" ? "" : `${product.name} pack`}
       loading='lazy'
       onError={() => setFailed(true)}
-      className={
-        size === "thumb"
-          ? `object-contain ${className}`
-          : `h-[200px] w-auto max-w-full object-contain drop-shadow-[0_18px_22px_rgba(0,0,0,0.25)] ${className}`
-      }
+      className={`w-full h-full ${contain ? "object-contain bg-[#F4F4F4]" : "object-cover"} ${className}`}
     />
   );
 };

@@ -16,6 +16,7 @@ const blocks = [
     cta: { label: "Shop real food", href: "#products" },
     stat: { value: "100%", label: "real food" },
     tone: "bg-ink text-[#F5F1E8]",
+    photo: "images/muesli-bowl.jpg",
   },
   {
     eyebrow: "NUTRUMMY is",
@@ -36,9 +37,22 @@ const Values = () => (
         variants={fadeIn(i % 2 ? "left" : "right", "spring", 0.1, 0.8)}
         className={`grid md:grid-cols-2 rounded-3xl overflow-hidden border-2 border-ink shadow-pop-lg ${i % 2 ? "md:[direction:rtl]" : ""}`}
       >
-        <div className={`${b.tone} p-10 sm:p-14 flex flex-col justify-center items-start [direction:ltr]`}>
-          <p className='font-display font-extrabold text-[88px] sm:text-[112px] leading-none tracking-[-0.04em]'>{b.stat.value}</p>
-          <p className='mt-2 text-[14px] font-bold uppercase tracking-[0.2em] opacity-90'>{b.stat.label}</p>
+        <div
+          className={`${b.tone} relative overflow-hidden p-10 sm:p-14 flex flex-col justify-center items-start [direction:ltr]`}
+        >
+          {b.photo && (
+            <>
+              <img
+                src={`${import.meta.env.BASE_URL}${b.photo}`}
+                alt=''
+                loading='lazy'
+                className='absolute inset-0 w-full h-full object-cover'
+              />
+              <div className='absolute inset-0 bg-gradient-to-t from-[#003B4A] via-[#003B4A]/70 to-[#003B4A]/20' />
+            </>
+          )}
+          <p className='relative font-display font-extrabold text-[88px] sm:text-[112px] leading-none tracking-[-0.04em]'>{b.stat.value}</p>
+          <p className='relative mt-2 text-[14px] font-bold uppercase tracking-[0.2em] opacity-90'>{b.stat.label}</p>
         </div>
         <div className='bg-tertiary p-10 sm:p-14 [direction:ltr]'>
           <p className={styles.sectionSubText}>{b.eyebrow}</p>

@@ -47,6 +47,21 @@ const About = () => (
       </motion.div>
     </div>
 
+    <motion.figure
+      variants={fadeIn("up", "spring", 0.1, 0.8)}
+      className='mt-12 rounded-3xl overflow-hidden border-2 border-ink shadow-pop-lg relative'
+    >
+      <img
+        src={`${import.meta.env.BASE_URL}images/breakfast-lifestyle.jpg`}
+        alt='A family sharing a NUTRUMMY breakfast at the table'
+        loading='lazy'
+        className='w-full h-[260px] sm:h-[380px] object-cover'
+      />
+      <figcaption className='absolute bottom-4 left-4 bg-sun text-ink font-extrabold text-[14px] px-4 py-2 rounded-full border-2 border-ink shadow-pop-sm'>
+        Breakfasts the whole family actually wants
+      </figcaption>
+    </motion.figure>
+
     <div className='mt-14 grid md:grid-cols-3 gap-5'>
       {story.pillars.map((p, index) => (
         <PillarCard key={p.label} index={index} {...p} />

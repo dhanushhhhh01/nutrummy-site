@@ -184,6 +184,7 @@ export const ingredients = [
 export const products = [
   {
     id: "lupicrunch",
+    imageFit: "contain",
     theme: { soft: "#FFF1C2", solid: "#FFC93C" },
     chip: "High Protein Muesli",
     rating: 4.9,
@@ -217,6 +218,7 @@ export const products = [
   },
   {
     id: "oats",
+    imageFit: "contain",
     theme: { soft: "#ECE5FF", solid: "#B9A3FF" },
     chip: "High Protein Oats",
     rating: 4.9,
@@ -250,6 +252,7 @@ export const products = [
   },
   {
     id: "pancake",
+    imageFit: "cover",
     theme: { soft: "#D9F2D6", solid: "#5CC46A" },
     chip: "Waffle & Pancake Mixes",
     rating: 4.9,
@@ -283,6 +286,7 @@ export const products = [
   },
   {
     id: "cookie",
+    imageFit: "cover",
     theme: { soft: "#FFE0CC", solid: "#FF8A3D" },
     chip: "Cookie Mix",
     rating: 4.9,

@@ -7,6 +7,15 @@ import { navLinks, contactInfo } from "../constants";
 // Navy footer: explicit light text colours because theme tokens assume a light page.
 const Footer = () => (
   <footer className='bg-ink text-[#F5F1E8]'>
+    <div className='relative h-[140px] sm:h-[200px] overflow-hidden'>
+      <img
+        src={`${import.meta.env.BASE_URL}images/farm-banner.jpg`}
+        alt='Fields where our grains and lupin are grown'
+        loading='lazy'
+        className='w-full h-full object-cover'
+      />
+      <div className='absolute inset-0 bg-gradient-to-b from-transparent to-[#003B4A]' />
+    </div>
     <div className={`max-w-7xl mx-auto ${styles.paddingX} py-14`}>
       <div className='flex flex-col md:flex-row md:items-end justify-between gap-10'>
         <div className='max-w-md'>

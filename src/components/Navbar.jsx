@@ -152,14 +152,12 @@ const Navbar = () => {
               </ul>
             </div>
 
-            <Link to='/' onClick={() => window.scrollTo(0, 0)} className='flex flex-col items-center gap-0.5' aria-label='NUTRUMMY home'>
-              <div className='flex items-center gap-2'>
-                <img src={`${import.meta.env.BASE_URL}logo.svg`} alt='' className='w-9 h-9 sm:w-10 sm:h-10' />
-                <span className='font-display text-cream text-[19px] sm:text-[22px] font-extrabold tracking-tight leading-none'>
-                  NUTRUMMY
-                </span>
-              </div>
-              <span className='hidden sm:block text-gold text-[9px] font-bold tracking-[0.3em] leading-none'>LUPIN SUPERFOOD</span>
+            <Link to='/' onClick={() => window.scrollTo(0, 0)} className='flex items-center' aria-label='Nutrummy home'>
+              <img
+                src={`${import.meta.env.BASE_URL}images/logo.jpg`}
+                alt='Nutrummy: Your tummy needs yummy'
+                className='h-11 sm:h-14 w-auto mix-blend-multiply'
+              />
             </Link>
 
             <div className='flex items-center justify-end gap-0.5 sm:gap-1'>

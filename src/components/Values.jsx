@@ -15,7 +15,7 @@ const blocks = [
     points: ["Zero maida", "No refined sugar", "No synthetic isolates"],
     cta: { label: "Shop real food", href: "#products" },
     stat: { value: "100%", label: "real food" },
-    tone: "bg-ink text-[#FFF3E6]",
+    tone: "bg-ink text-[#F5F1E8]",
   },
   {
     eyebrow: "NUTRUMMY is",
@@ -24,7 +24,7 @@ const blocks = [
     points: ["Complete amino acids", "22g fibre / 100g", "Ultra-low GI"],
     cta: { label: "See the nutrition", href: "#compare" },
     stat: { value: "35g", label: "protein per 100g" },
-    tone: "bg-lupin text-ink",
+    tone: "bg-lupin text-onaccent",
   },
 ];
 
@@ -53,7 +53,7 @@ const Values = () => (
           </ul>
           <a
             href={b.cta.href}
-            className='mt-8 inline-flex items-center gap-2 bg-lupin text-ink text-[13px] font-bold uppercase tracking-wider px-6 py-3.5 rounded-full hover:bg-ink hover:text-primary transition-colors'
+            className='mt-8 inline-flex items-center gap-2 bg-lupin text-onaccent text-[13px] font-bold uppercase tracking-wider px-6 py-3.5 rounded-full hover:bg-ink hover:text-primary transition-colors'
           >
             {b.cta.label} <Icon name='arrow' className='w-4 h-4' strokeWidth={2.25} />
           </a>

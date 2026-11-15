@@ -62,12 +62,12 @@ const Tech = () => {
           transition={{ duration: 0.25 }}
           className='mt-12 grid md:grid-cols-[0.8fr_1.2fr] rounded-3xl overflow-hidden border border-ink/10 shadow-card'
         >
-          <div className='bg-ink text-[#FFF3E6] p-8 sm:p-10 flex flex-col justify-center'>
-            <span className='self-start text-[11px] font-bold uppercase tracking-[0.18em] bg-lupin text-ink px-3 py-1 rounded-full'>
+          <div className='bg-ink text-[#F5F1E8] p-8 sm:p-10 flex flex-col justify-center'>
+            <span className='self-start text-[11px] font-bold uppercase tracking-[0.18em] bg-lupin text-onaccent px-3 py-1 rounded-full'>
               {ing.badge}
             </span>
             <p className='mt-5 font-display font-extrabold text-[30px] sm:text-[36px] leading-tight tracking-[-0.02em]'>{ing.name}</p>
-            <p className='mt-2 text-lupin text-[13px] font-bold uppercase tracking-[0.2em]'>{ing.kicker}</p>
+            <p className='mt-2 text-mango text-[13px] font-bold uppercase tracking-[0.2em]'>{ing.kicker}</p>
           </div>
           <div className='bg-tertiary p-8 sm:p-10'>
             <p className={styles.sectionSubText}>Nutritional superpower</p>

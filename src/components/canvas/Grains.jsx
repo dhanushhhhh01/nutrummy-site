@@ -17,7 +17,7 @@ const Grains = () => {
   return (
     <group rotation={[0, 0, Math.PI / 4]}>
       <Points ref={ref} positions={sphere} stride={3} frustumCulled>
-        <PointMaterial transparent color='#B8420A' size={0.0035} sizeAttenuation depthWrite={false} />
+        <PointMaterial transparent color='#C7254A' size={0.0035} sizeAttenuation depthWrite={false} />
       </Points>
     </group>
   );

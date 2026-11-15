@@ -131,7 +131,7 @@ const Contact = () => {
             <button
               type='submit'
               disabled={status.state === "loading"}
-              className='bg-lupin text-ink py-3.5 px-8 rounded-full font-semibold hover:bg-ink hover:text-primary transition-colors disabled:opacity-60'
+              className='bg-lupin text-onaccent py-3.5 px-8 rounded-full font-semibold hover:bg-ink hover:text-primary transition-colors disabled:opacity-60'
             >
               {status.state === "loading" ? "Sending…" : "Send message"}
             </button>

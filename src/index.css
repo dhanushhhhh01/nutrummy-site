@@ -14,15 +14,15 @@
 
 html,
 body {
-  background: #FFF3E6;
-  color: #3D1A4D;
+  background: #F5F1E8;
+  color: #1A2E35;
   font-family: "Plus Jakarta Sans", system-ui, sans-serif;
   overflow-x: hidden;
 }
 
 ::selection {
-  background: #B8420A;
-  color: #FFF3E6;
+  background: #C7254A;
+  color: #F5F1E8;
 }
 
 .hash-span {
@@ -34,9 +34,9 @@ body {
 /* Hero backdrop: warm glow instead of the template's image */
 .hero-glow {
   background:
-    radial-gradient(55% 55% at 78% 45%, rgba(255,107,26, 0.22) 0%, rgba(255,107,26, 0) 70%),
-    radial-gradient(40% 40% at 8% 90%, rgba(184,66,10, 0.08) 0%, rgba(184,66,10, 0) 70%),
-    linear-gradient(180deg, #FFE6CC 0%, #FFF3E6 100%);
+    radial-gradient(55% 55% at 78% 45%, rgba(238,78,110, 0.22) 0%, rgba(238,78,110, 0) 70%),
+    radial-gradient(40% 40% at 8% 90%, rgba(199,37,74, 0.08) 0%, rgba(199,37,74, 0) 70%),
+    linear-gradient(180deg, #EFE8D8 0%, #F5F1E8 100%);
 }
 
 .grain::after {
@@ -49,7 +49,7 @@ body {
 }
 
 .gold-gradient {
-  background: linear-gradient(-90deg, #B8420A 0%, rgba(184,66,10, 0) 100%);
+  background: linear-gradient(-90deg, #C7254A 0%, rgba(199,37,74, 0) 100%);
 }
 
 .gold-berry-gradient {
@@ -87,11 +87,11 @@ body {
 
 /* Timeline overrides */
 .vertical-timeline::before {
-  background: linear-gradient(180deg, #B8420A, #FF6B1A) !important;
+  background: linear-gradient(180deg, #C7254A, #EE4E6E) !important;
 }
 
 .vertical-timeline-element-date {
-  color: #B8420A !important;
+  color: #C7254A !important;
   font-weight: 600 !important;
   opacity: 1 !important;
 }
@@ -101,8 +101,8 @@ body {
   width: 42px;
   height: 42px;
   border-radius: 50%;
-  border: 4px solid rgba(184,66,10, 0.15);
-  border-top-color: #B8420A;
+  border: 4px solid rgba(199,37,74, 0.15);
+  border-top-color: #C7254A;
   animation: spin 0.9s linear infinite;
 }
 

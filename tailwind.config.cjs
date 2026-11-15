@@ -1,31 +1,32 @@
 /** @type {import('tailwindcss').Config} */
-// "Sunrise" theme. Token names are kept from the original template so components
-// didn't need renaming; read them by role:
-//   primary   = page background (peach)    cream / ink = main text and dark bands (plum)
-//   tertiary  = card surface (white)       gold  = text accent (burnt orange)
-//   secondary = muted body text            lupin = tangerine buttons/fills (plum text on top)
-//   mango     = bright decorative highlight
-// Contrast (WCAG AA): plum 13.2:1 and secondary 7.3:1 on peach; accent 5.0:1;
-// plum on tangerine 5.1:1; tangerine on plum 5.1:1.
+// Colours from the live NUTRUMMY reference site. Token names are kept from the original
+// template so components didn't need renaming; read them by role:
+//   primary   = page background (cream #F5F1E8)   cream / ink = text and dark bands (teal #003B4A)
+//   tertiary  = card surface (white)              gold  = pink text accent (#C7254A, deepened for AA)
+//   secondary = muted body text                   lupin = reference pink #EE4E6E for buttons/fills
+//   onaccent  = text on pink buttons              mango = gold highlights on teal bands and stars
+// Contrast (WCAG AA): teal 10.8:1, secondary 6.1:1, pink text 4.9:1 on cream;
+// button text on pink 4.8:1; gold on teal 6.4:1.
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,jsx}"],
   mode: "jit",
   theme: {
     extend: {
       colors: {
-        primary: "#FFF3E6",
-        secondary: "#5E4A66",
+        primary: "#F5F1E8",
+        secondary: "#4A5D63",
         tertiary: "#FFFFFF",
-        gold: "#B8420A",
-        lupin: "#FF6B1A",
-        mango: "#FFC233",
-        cream: "#3D1A4D",
-        ink: "#3D1A4D",
+        gold: "#C7254A",
+        lupin: "#EE4E6E",
+        onaccent: "#0B1F26",
+        mango: "#F5B82E",
+        cream: "#003B4A",
+        ink: "#003B4A",
         berry: "#B42318",
-        muted: "#74607A",
+        muted: "#5F7075",
         "black-100": "#FFFFFF",
-        "black-200": "#FFF8F0",
-        "white-100": "#3D1A4D",
+        "black-200": "#FBF8F2",
+        "white-100": "#003B4A",
       },
       fontFamily: {
         display: ['"Plus Jakarta Sans"', "system-ui", "sans-serif"],

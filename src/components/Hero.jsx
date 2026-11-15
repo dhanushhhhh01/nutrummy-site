@@ -46,7 +46,7 @@ const Hero = () => {
           <div className='mt-9 flex flex-wrap gap-3'>
             <a
               href='#products'
-              className='inline-flex items-center gap-2 bg-lupin text-ink font-semibold px-7 py-3.5 rounded-full hover:bg-ink hover:text-primary transition-colors'
+              className='inline-flex items-center gap-2 bg-lupin text-onaccent font-semibold px-7 py-3.5 rounded-full hover:bg-ink hover:text-primary transition-colors'
             >
               Explore products <Icon name='arrow' className='w-4 h-4' strokeWidth={2.25} />
             </a>

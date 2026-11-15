@@ -43,7 +43,7 @@ const RecipeCard = ({ title, time, protein, text, highlights, category, productI
             }}
             aria-label={added ? "View cart" : `Get ${product.name} for this recipe`}
             className={`inline-flex items-center gap-1 text-[13px] font-bold px-3.5 py-2 rounded-full transition-colors ${
-              added ? "bg-ink text-primary" : "bg-lupin text-ink hover:bg-ink hover:text-primary"
+              added ? "bg-ink text-primary" : "bg-lupin text-onaccent hover:bg-ink hover:text-primary"
             }`}
           >
             {added ? "View cart" : "Get mix"} <Icon name='arrow' className='w-3.5 h-3.5' strokeWidth={2.5} />

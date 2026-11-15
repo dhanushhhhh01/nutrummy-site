@@ -37,13 +37,13 @@ const Career = () => {
 
   return (
     <main className='pt-[130px]'>
-      <section className='bg-ink text-[#FFF3E6]'>
+      <section className='bg-ink text-[#F5F1E8]'>
         <div className={`${styles.paddingX} max-w-7xl mx-auto py-20`}>
-          <p className='text-[12px] font-bold uppercase tracking-[0.25em] text-lupin'>Join our mission</p>
+          <p className='text-[12px] font-bold uppercase tracking-[0.25em] text-mango'>Join our mission</p>
           <h1 className='mt-3 font-display font-extrabold text-[40px] sm:text-[60px] leading-[1.02] tracking-[-0.03em] max-w-3xl'>
             {careers.title}
           </h1>
-          <p className='mt-5 text-[#E3D3E8] text-[18px] leading-[30px] max-w-2xl'>{careers.intro}</p>
+          <p className='mt-5 text-[#C9DDE2] text-[18px] leading-[30px] max-w-2xl'>{careers.intro}</p>
         </div>
       </section>
 
@@ -115,7 +115,7 @@ const Career = () => {
               {status.text}
             </p>
           )}
-          <button type='submit' className='w-full bg-lupin text-ink font-bold uppercase tracking-wider text-[13px] py-3.5 rounded-full hover:bg-ink hover:text-primary transition-colors'>
+          <button type='submit' className='w-full bg-lupin text-onaccent font-bold uppercase tracking-wider text-[13px] py-3.5 rounded-full hover:bg-ink hover:text-primary transition-colors'>
             Send introduction
           </button>
         </form>

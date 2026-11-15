@@ -34,15 +34,15 @@ const Block = ({ block }) => {
 const RelatedProducts = ({ ids }) => {
   const { add, open } = useCart();
   return (
-    <aside className='mt-12 bg-ink rounded-3xl p-8 text-[#FFF3E6]'>
-      <p className='text-[12px] font-bold uppercase tracking-[0.2em] text-lupin'>Mentioned in this article</p>
+    <aside className='mt-12 bg-ink rounded-3xl p-8 text-[#F5F1E8]'>
+      <p className='text-[12px] font-bold uppercase tracking-[0.2em] text-mango'>Mentioned in this article</p>
       <div className='mt-5 grid sm:grid-cols-3 gap-3'>
         {ids.map((id) => {
           const p = products.find((x) => x.id === id);
           return (
-            <div key={id} className='bg-[#FFF3E6]/[0.07] rounded-2xl p-4 flex flex-col'>
+            <div key={id} className='bg-[#F5F1E8]/[0.07] rounded-2xl p-4 flex flex-col'>
               <p className='font-bold text-[15px] leading-tight'>{p.name}</p>
-              <p className='text-[13px] text-[#E3D3E8] mt-1'>
+              <p className='text-[13px] text-[#C9DDE2] mt-1'>
                 {p.protein} protein · from {formatINR(p.packs[0].price)}
               </p>
               <button
@@ -51,7 +51,7 @@ const RelatedProducts = ({ ids }) => {
                   add(p.id, p.packs[0].id);
                   open();
                 }}
-                className='mt-4 self-start bg-lupin text-ink text-[12px] font-bold uppercase tracking-wider px-4 py-2 rounded-full hover:bg-[#FFF3E6]'
+                className='mt-4 self-start bg-lupin text-onaccent text-[12px] font-bold uppercase tracking-wider px-4 py-2 rounded-full hover:bg-[#F5F1E8]'
               >
                 Add to cart
               </button>

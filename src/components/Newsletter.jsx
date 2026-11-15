@@ -20,7 +20,7 @@ const Newsletter = () => {
   };
 
   return (
-    <section className='bg-lupin text-ink'>
+    <section className='bg-lupin text-onaccent'>
       <div className={`max-w-7xl mx-auto ${styles.paddingX} py-14 grid md:grid-cols-[1.2fr_1fr] gap-8 items-center`}>
         <div>
           <p className='text-[12px] font-bold uppercase tracking-[0.25em] opacity-90'>Never miss a morning</p>
@@ -48,7 +48,7 @@ const Newsletter = () => {
             />
             <button
               type='submit'
-              className='bg-ink text-[#FFF3E6] font-bold uppercase tracking-wider text-[13px] px-7 py-3.5 rounded-full hover:bg-[#FFFFFF] hover:text-ink transition-colors'
+              className='bg-ink text-[#F5F1E8] font-bold uppercase tracking-wider text-[13px] px-7 py-3.5 rounded-full hover:bg-[#FFFFFF] hover:text-ink transition-colors'
             >
               Join
             </button>

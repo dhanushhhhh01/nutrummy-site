@@ -141,7 +141,7 @@ const BotProduct = ({ id }) => {
           add(p.id, p.packs[0].id);
           setAdded(true);
         }}
-        className={`text-[12px] font-bold px-3 py-1.5 rounded-full shrink-0 ${added ? "bg-cream text-primary" : "bg-lupin text-ink"}`}
+        className={`text-[12px] font-bold px-3 py-1.5 rounded-full shrink-0 ${added ? "bg-cream text-primary" : "bg-lupin text-onaccent"}`}
       >
         {added ? "View cart" : "Add"}
       </button>
@@ -187,15 +187,15 @@ const Chatbot = () => {
             aria-label='NutriBot chat'
             className='fixed z-40 bottom-24 right-4 sm:right-6 w-[calc(100vw-2rem)] max-w-[380px] h-[min(560px,calc(100svh-8rem))] bg-tertiary rounded-2xl shadow-2xl border border-ink/10 flex flex-col overflow-hidden'
           >
-            <header className='bg-ink text-[#FFF3E6] px-5 py-4 flex items-center justify-between'>
+            <header className='bg-ink text-[#F5F1E8] px-5 py-4 flex items-center justify-between'>
               <div className='flex items-center gap-3'>
                 <img src={`${import.meta.env.BASE_URL}logo.svg`} alt='' className='w-9 h-9' />
                 <div>
                   <p className='font-bold text-[15px] leading-tight'>NutriBot</p>
-                  <p className='text-[12px] text-[#E3D3E8]'>Instant answers about NUTRUMMY</p>
+                  <p className='text-[12px] text-[#C9DDE2]'>Instant answers about NUTRUMMY</p>
                 </div>
               </div>
-              <button type='button' onClick={() => setOpen(false)} aria-label='Close chat' className='p-1.5 hover:text-lupin'>
+              <button type='button' onClick={() => setOpen(false)} aria-label='Close chat' className='p-1.5 hover:text-mango'>
                 <Icon name='close' className='w-5 h-5' />
               </button>
             </header>
@@ -205,7 +205,7 @@ const Chatbot = () => {
                 <div key={i} className={m.from === "user" ? "flex justify-end" : ""}>
                   <div
                     className={`max-w-[88%] rounded-2xl px-3.5 py-2.5 text-[14px] leading-[21px] whitespace-pre-line ${
-                      m.from === "user" ? "bg-lupin text-ink rounded-br-md" : "bg-tertiary text-cream border border-ink/10 rounded-bl-md"
+                      m.from === "user" ? "bg-lupin text-onaccent rounded-br-md" : "bg-tertiary text-cream border border-ink/10 rounded-bl-md"
                     }`}
                   >
                     {m.text}
@@ -271,7 +271,7 @@ const Chatbot = () => {
               <button
                 type='submit'
                 aria-label='Send'
-                className='w-10 h-10 rounded-full bg-lupin text-ink flex items-center justify-center hover:bg-ink hover:text-primary shrink-0'
+                className='w-10 h-10 rounded-full bg-lupin text-onaccent flex items-center justify-center hover:bg-ink hover:text-primary shrink-0'
               >
                 <Icon name='arrow' className='w-4 h-4' strokeWidth={2.5} />
               </button>
@@ -285,9 +285,9 @@ const Chatbot = () => {
         onClick={() => setOpen((o) => !o)}
         aria-label={open ? "Close NutriBot" : "Open NutriBot chat"}
         aria-expanded={open}
-        className='fixed z-40 bottom-5 right-4 sm:right-6 h-14 w-14 sm:w-auto justify-center sm:justify-start sm:pl-3 sm:pr-5 rounded-full bg-ink text-[#FFF3E6] shadow-2xl flex items-center gap-2.5 hover:bg-lupin hover:text-ink transition-colors'
+        className='fixed z-40 bottom-5 right-4 sm:right-6 h-14 w-14 sm:w-auto justify-center sm:justify-start sm:pl-3 sm:pr-5 rounded-full bg-ink text-[#F5F1E8] shadow-2xl flex items-center gap-2.5 hover:bg-lupin hover:text-onaccent transition-colors'
       >
-        <span className='w-9 h-9 rounded-full bg-[#FFF3E6]/10 flex items-center justify-center'>
+        <span className='w-9 h-9 rounded-full bg-[#F5F1E8]/10 flex items-center justify-center'>
           <Icon name={open ? "close" : "chat"} className='w-5 h-5' />
         </span>
         <span className='hidden sm:inline text-[14px] font-bold'>{open ? "Close" : "Ask NutriBot"}</span>

@@ -14,15 +14,15 @@ const MomentCard = ({ moment }) => (
   <VerticalTimelineElement
     contentStyle={{
       background: "#FFFFFF",
-      color: "#3D1A4D",
-      boxShadow: "0 12px 32px -12px rgba(61,26,77,0.14)",
-      border: "1px solid rgba(61,26,77,0.10)",
+      color: "#003B4A",
+      boxShadow: "0 12px 32px -12px rgba(0,59,74,0.14)",
+      border: "1px solid rgba(0,59,74,0.10)",
       borderRadius: 16,
       padding: "24px 26px",
     }}
     contentArrowStyle={{ borderRight: "7px solid #FFFFFF" }}
     date={moment.time}
-    iconStyle={{ background: "#FFFFFF", color: "#B8420A", boxShadow: "0 0 0 2px #B8420A, 0 0 0 7px #FFF3E6" }}
+    iconStyle={{ background: "#FFFFFF", color: "#C7254A", boxShadow: "0 0 0 2px #C7254A, 0 0 0 7px #F5F1E8" }}
     icon={
       <div className='flex justify-center items-center w-full h-full'>
         <Icon name={moment.icon} className='w-[45%] h-[45%]' />
@@ -54,7 +54,7 @@ const Experience = () => (
     </motion.div>
 
     <div className='mt-16 flex flex-col'>
-      <VerticalTimeline lineColor='#B8420A'>
+      <VerticalTimeline lineColor='#C7254A'>
         {moments.map((m) => (
           <MomentCard key={m.time} moment={m} />
         ))}

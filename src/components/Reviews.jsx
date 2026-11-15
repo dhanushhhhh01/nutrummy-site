@@ -55,7 +55,7 @@ const Reviews = () => (
         </p>
         <a
           href={`mailto:${contactInfo.email}?subject=${encodeURIComponent("My NUTRUMMY review")}`}
-          className='mt-6 inline-flex items-center gap-2 bg-lupin text-ink text-[13px] font-bold uppercase tracking-wider px-6 py-3.5 rounded-full hover:bg-ink hover:text-primary transition-colors'
+          className='mt-6 inline-flex items-center gap-2 bg-lupin text-onaccent text-[13px] font-bold uppercase tracking-wider px-6 py-3.5 rounded-full hover:bg-ink hover:text-primary transition-colors'
         >
           Share your review <Icon name='arrow' className='w-4 h-4' strokeWidth={2.25} />
         </a>

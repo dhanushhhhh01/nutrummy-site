@@ -24,7 +24,7 @@ const CartButton = () => {
           initial={{ scale: 0.4 }}
           animate={{ scale: 1 }}
           transition={{ type: "spring", stiffness: 500, damping: 18 }}
-          className='absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 rounded-full bg-lupin text-ink text-[10px] font-bold flex items-center justify-center'
+          className='absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 rounded-full bg-lupin text-onaccent text-[10px] font-bold flex items-center justify-center'
         >
           {count}
         </motion.span>
@@ -112,7 +112,7 @@ const Navbar = () => {
   return (
     <>
       <header className='fixed top-0 inset-x-0 z-30'>
-        <p className='bg-ink text-[#FFF3E6] text-center text-[12px] sm:text-[13px] font-semibold tracking-wide py-2 px-4'>
+        <p className='bg-ink text-[#F5F1E8] text-center text-[12px] sm:text-[13px] font-semibold tracking-wide py-2 px-4'>
           Free shipping over ₹{FREE_SHIPPING_AT} · Use code <span className='text-mango font-bold'>SEVEN15</span> for 15% off
         </p>
         <nav

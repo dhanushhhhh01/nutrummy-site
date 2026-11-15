@@ -32,7 +32,7 @@ const BreakfastPicker = () => {
               x.id === id ? "bg-ink text-primary border-ink" : "bg-tertiary/70 text-cream border-ink/15 hover:border-ink/40"
             }`}
           >
-            {x.chip} <span className={x.id === id ? "text-lupin" : "text-gold"}>· {x.protein}</span>
+            {x.chip} <span className={x.id === id ? "text-mango" : "text-gold"}>· {x.protein}</span>
           </button>
         ))}
       </div>
@@ -64,7 +64,7 @@ const BreakfastPicker = () => {
               setAdded(true);
             }}
             className={`shrink-0 inline-flex items-center gap-1.5 text-[13px] font-bold px-4 py-2.5 rounded-full transition-colors ${
-              added ? "bg-ink text-primary" : "bg-lupin text-ink hover:bg-ink hover:text-primary"
+              added ? "bg-ink text-primary" : "bg-lupin text-onaccent hover:bg-ink hover:text-primary"
             }`}
           >
             {added ? (

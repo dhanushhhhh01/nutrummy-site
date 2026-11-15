@@ -119,14 +119,64 @@ export const moments = [
   },
 ];
 
-// Rendered as "periodic table" tiles on the 3D spheres.
+// Ingredient explorer. The Lupin copy is from the live NUTRUMMY site; the others are
+// short descriptions written for this build, so please review them.
 export const ingredients = [
-  { name: "Sweet Lupin", symbol: "Lu", stat: "35% protein", color: "#F5B82E" },
-  { name: "Ancient Multigrains", symbol: "Mg", stat: "30% blend", color: "#E8C98F" },
-  { name: "California Almonds", symbol: "Al", stat: "Roasted", color: "#C98B55" },
-  { name: "Rich Cocoa", symbol: "Co", stat: "Solids", color: "#8A5530" },
-  { name: "Monk Fruit", symbol: "Mf", stat: "0 sugar", color: "#B9CF7A" },
-  { name: "Chia & Seeds", symbol: "Cs", stat: "Omega-3", color: "#DCCFBE" },
+  {
+    name: "Lupin Super Legume",
+    symbol: "Lu",
+    stat: "35% protein",
+    color: "#F5B82E",
+    badge: "35% natural protein",
+    kicker: "The protein titan",
+    headline: "3× more protein than quinoa, 100% plant-based",
+    text: "Lupin is an ancient golden legume celebrated for having one of the highest natural protein densities on Earth, accompanied by gut-loving prebiotic fibre. Unlike whey isolates, it digests effortlessly without bloating or heavy chemical processing.",
+    points: ["Complete amino acid balance", "Ultra-low glycemic index (GI)", "High natural prebiotic fibre"],
+  },
+  {
+    name: "30% Ancient Multigrains",
+    symbol: "Mg",
+    stat: "30% blend",
+    color: "#E8C98F",
+    badge: "Whole grain",
+    kicker: "The steady energy",
+    headline: "Whole grains for slow, sustained energy",
+    text: "A blend of whole multigrains gives every bowl its hearty crunch and complex carbohydrates, so energy releases slowly through the morning instead of spiking and crashing.",
+    points: ["Complex carbohydrates", "Natural fibre", "Zero maida"],
+  },
+  {
+    name: "California Almonds & Seeds",
+    symbol: "Al",
+    stat: "Roasted",
+    color: "#C98B55",
+    badge: "Good fats",
+    kicker: "The crunch",
+    headline: "Roasted almonds and seeds in every spoonful",
+    text: "Roasted almonds and chia seeds add satisfying crunch along with naturally occurring healthy fats, extra protein and minerals.",
+    points: ["Healthy fats", "Extra plant protein", "Satisfying crunch"],
+  },
+  {
+    name: "Rich Cocoa Solids",
+    symbol: "Co",
+    stat: "Real cocoa",
+    color: "#8A5530",
+    badge: "Real cocoa",
+    kicker: "The indulgence",
+    headline: "Deep chocolate flavour, no artificial flavours",
+    text: "Real cocoa solids give our chocolate muesli and cookie premix their rich, dark flavour, without any artificial flavouring.",
+    points: ["Real cocoa", "No artificial flavours", "Naturally rich taste"],
+  },
+  {
+    name: "Monk Fruit Extract",
+    symbol: "Mf",
+    stat: "0 sugar",
+    color: "#B9CF7A",
+    badge: "0g added sugar",
+    kicker: "The sweetness",
+    headline: "Natural sweetness without refined sugar",
+    text: "Monk fruit is a naturally sweet fruit. Its extract lets us sweeten our recipes without refined white sugar, so there is no sugar spike.",
+    points: ["No refined sugar", "Naturally derived", "No sugar crash"],
+  },
 ];
 
 // Prices and pack sizes mirror the live NUTRUMMY site.
@@ -134,6 +184,18 @@ export const ingredients = [
 export const products = [
   {
     id: "lupicrunch",
+    chip: "High Protein Muesli",
+    rating: 4.9,
+    reviewCount: "180+",
+    nutrition: {
+      protein: "35g / 100g",
+      addedSugar: "0g",
+      maida: "0%",
+      plantPowered: "100%",
+      flavour: "Chocolate",
+      keyIngredients: "Multigrains, Sweet Lupin, roasted almonds, chia seeds, cocoa, monk fruit",
+      howToServe: "40g with chilled milk",
+    },
     name: "LupiCrunch High Protein Muesli",
     short: ["Lupi", "CRUNCH"],
     category: "Muesli",
@@ -154,6 +216,18 @@ export const products = [
   },
   {
     id: "oats",
+    chip: "High Protein Oats",
+    rating: 4.9,
+    reviewCount: "180+",
+    nutrition: {
+      protein: "35g / 100g",
+      addedSugar: "0g",
+      maida: "0%",
+      plantPowered: "100%",
+      flavour: "Chocolate",
+      keyIngredients: "Whole rolled oats, Sweet Lupin, cocoa, berries, seeds",
+      howToServe: "40g, warm or overnight",
+    },
     name: "High Protein Oats",
     short: ["Protein", "OATS"],
     category: "Oats",
@@ -174,6 +248,18 @@ export const products = [
   },
   {
     id: "pancake",
+    chip: "Waffle & Pancake Mixes",
+    rating: 4.9,
+    reviewCount: "180+",
+    nutrition: {
+      protein: "17g / 100g",
+      addedSugar: "0g",
+      maida: "0%",
+      plantPowered: "100%",
+      flavour: "Vanilla & golden grains",
+      keyIngredients: "Whole grains, Sweet Lupin, vanilla",
+      howToServe: "Whisk with milk or water, ready in 3 minutes",
+    },
     name: "Pancake & Waffle Mix",
     short: ["Pancake", "& WAFFLE"],
     category: "Bake mixes",
@@ -194,6 +280,18 @@ export const products = [
   },
   {
     id: "cookie",
+    chip: "Cookie Mix",
+    rating: 4.9,
+    reviewCount: "180+",
+    nutrition: {
+      protein: "21g / 100g",
+      addedSugar: "0g",
+      maida: "0%",
+      plantPowered: "100%",
+      flavour: "Double dark chocolate",
+      keyIngredients: "Whole grains, Sweet Lupin, cocoa",
+      howToServe: "Mix with butter or coconut oil, bake 10 minutes",
+    },
     name: "Protein Cookie Premix",
     short: ["Cookie", "PREMIX"],
     category: "Bake mixes",
@@ -226,6 +324,8 @@ export const comparison = [
 export const recipes = [
   {
     title: "Choco-Lupin Acai Superbowl",
+    category: "Muesli bowls",
+    productId: "lupicrunch",
     time: "3 mins",
     protein: "24g",
     text: "Chilled greek yogurt or acai topped with LupiCrunch, strawberries, blueberries and hemp seeds.",
@@ -233,6 +333,8 @@ export const recipes = [
   },
   {
     title: "Overnight Raspberry Oats Jar",
+    category: "Porridge & jars",
+    productId: "oats",
     time: "2 mins + overnight",
     protein: "28g",
     text: "Layer High Protein Oats with almond milk, chia and raspberries. Wake up to breakfast, done.",
@@ -240,6 +342,8 @@ export const recipes = [
   },
   {
     title: "Crispy Belgian Protein Waffles",
+    category: "Weekend stacks",
+    productId: "pancake",
     time: "5 mins",
     protein: "22g",
     text: "Whisk the mix with milk, pour into a hot iron until golden. Finish with blueberries and raw honey.",
@@ -247,12 +351,16 @@ export const recipes = [
   },
   {
     title: "Soft-Baked Double Choco Cookies",
+    category: "Warm bakes",
+    productId: "cookie",
     time: "10 mins bake",
     protein: "21g",
     text: "Stir the premix with butter or coconut oil, scoop and bake. Crisp rim, gooey fudge centre.",
     highlights: ["Snack pack", "Sweet-tooth fix"],
   },
 ];
+
+export const recipeCategories = ["All", "Muesli bowls", "Porridge & jars", "Warm bakes", "Weekend stacks"];
 
 export const partners = [
   {

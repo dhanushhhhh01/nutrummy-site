@@ -1,15 +1,16 @@
 import { motion } from "framer-motion";
 
 import { styles } from "../styles";
-import { claims, heroStats } from "../constants";
+import { claims } from "../constants";
+import BreakfastPicker from "./BreakfastPicker";
 import { BowlCanvas } from "./canvas";
 import Icon from "./Icon";
 
 const Hero = () => {
   return (
-    <section className='relative w-full min-h-[100svh] lg:h-screen mx-auto overflow-hidden'>
+    <section className='relative w-full min-h-[100svh] mx-auto overflow-hidden lg:pb-28'>
       <div
-        className={`relative max-w-7xl mx-auto ${styles.paddingX} pt-[140px] lg:pt-[170px] flex flex-row items-start gap-5 pointer-events-none`}
+        className={`relative max-w-7xl mx-auto ${styles.paddingX} pt-[140px] lg:pt-[150px] flex flex-row items-start gap-5 pointer-events-none`}
       >
         <div className='hidden sm:flex flex-col justify-center items-center mt-3'>
           <div className='w-3.5 h-3.5 rounded-full bg-gold' />
@@ -20,7 +21,7 @@ const Hero = () => {
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className='lg:max-w-[540px] pointer-events-auto'
+          className='min-w-0 flex-1 lg:flex-none lg:max-w-[540px] pointer-events-auto'
         >
           <div className='inline-flex items-center gap-2 text-[13px] text-cream bg-ink/[0.04] border border-ink/10 rounded-full pl-2 pr-4 py-1.5 mb-7'>
             <span className='flex text-lupin'>
@@ -57,15 +58,7 @@ const Hero = () => {
             </a>
           </div>
 
-          <dl className='mt-12 hidden xs:grid grid-cols-3 gap-6 max-w-[480px] border-t border-ink/10 pt-6 [@media(max-height:780px)]:hidden'>
-            {heroStats.map((s) => (
-              <div key={s.label}>
-                <dt className='sr-only'>{s.label}</dt>
-                <dd className='font-display text-[30px] font-bold text-cream leading-none'>{s.value}</dd>
-                <dd className='text-[12px] text-secondary mt-2 leading-snug'>{s.label}</dd>
-              </div>
-            ))}
-          </dl>
+          <BreakfastPicker />
         </motion.div>
       </div>
 

@@ -16,6 +16,7 @@ import {
   GrainsCanvas,
 } from "../components";
 import BlogCards from "../components/BlogCards";
+import Calculator from "../components/Calculator";
 import { styles } from "../styles";
 
 const JournalTeaser = () => (
@@ -49,6 +50,7 @@ const Home = () => (
     <Experience />
     <Tech />
     <Compare />
+    <Calculator />
     <Recipes />
     <JournalTeaser />
     <Partners />

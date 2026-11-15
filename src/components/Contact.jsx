@@ -83,8 +83,18 @@ const Contact = () => {
           Let's <span className='text-gold'>talk.</span>
         </h3>
         <p className='mt-3 text-secondary text-[15px] leading-[26px]'>
-          Questions, feedback, bulk orders, or just want to say hi. We'd love to hear from you.
+          Questions, feedback, bulk orders or just want to say hi? We would love to hear from you.
         </p>
+        <div className='mt-6 grid sm:grid-cols-2 gap-3'>
+          <div className='rounded-xl bg-primary border border-ink/10 p-4'>
+            <p className='text-cream font-bold text-[15px]'>Got a question?</p>
+            <p className='text-secondary text-[14px] mt-1'>From ingredients to orders, we are here to help.</p>
+          </div>
+          <div className='rounded-xl bg-primary border border-ink/10 p-4'>
+            <p className='text-cream font-bold text-[15px]'>Bulk & corporate gifting</p>
+            <p className='text-secondary text-[14px] mt-1'>Let's build something for your team, event or store.</p>
+          </div>
+        </div>
 
         <form onSubmit={handleSubmit} className='mt-8 flex flex-col gap-5' noValidate>
           <div className='grid sm:grid-cols-2 gap-5'>

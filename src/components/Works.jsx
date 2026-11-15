@@ -7,7 +7,7 @@ import { SectionWrapper } from "../hoc";
 import { products, productCategories } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 import { useCart, formatINR } from "../context/CartContext";
-import ProductArt from "./ProductArt";
+import ProductImage from "./ProductImage";
 import Icon from "./Icon";
 
 const ProductCard = ({ product }) => {
@@ -25,12 +25,13 @@ const ProductCard = ({ product }) => {
   }, [justAdded]);
 
   return (
+    <div id={`product-${id}`} className='h-full scroll-mt-36 rounded-2xl target:ring-4 target:ring-lupin/60'>
     <Tilt options={{ max: 6, scale: 1, speed: 450 }} className={`${styles.card} p-4 h-full flex flex-col`}>
       <div
         className='relative w-full h-[220px] rounded-xl overflow-hidden flex items-center justify-center'
         style={{ background: "radial-gradient(circle at 50% 42%, #FFFFFF 0%, #EFE7D7 80%)" }}
       >
-        <ProductArt id={id} short={short} protein={protein} body={body} accent={accent} />
+        <ProductImage product={product} />
         <span className='absolute top-3 left-3 bg-cream text-primary text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full'>
           {badge}
         </span>
@@ -104,6 +105,7 @@ const ProductCard = ({ product }) => {
         )}
       </div>
     </Tilt>
+    </div>
   );
 };
 

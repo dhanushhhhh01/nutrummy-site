@@ -1,21 +1,22 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { AnimatePresence, motion } from "framer-motion";
 
 import { styles } from "../styles";
-import { navLinks, FREE_SHIPPING_AT } from "../constants";
+import { navLinks, products, FREE_SHIPPING_AT } from "../constants";
 import { useCart } from "../context/CartContext";
+import { LoginDialog, SearchDialog, TrackDialog } from "./HeaderDialogs";
 import Icon from "./Icon";
+
+const linkTo = (item) => (item.hash ? { pathname: item.to, hash: `#${item.hash}` } : item.to);
+
+const iconBtn =
+  "relative w-10 h-10 rounded-full flex items-center justify-center text-cream hover:text-gold hover:bg-ink/[0.05] transition-colors";
 
 const CartButton = () => {
   const { count, open, lastAdded } = useCart();
   return (
-    <button
-      type='button'
-      onClick={open}
-      aria-label={`Shopping cart, ${count} item${count === 1 ? "" : "s"}`}
-      className='relative w-11 h-11 rounded-full bg-tertiary border border-ink/10 shadow-card flex items-center justify-center text-cream hover:text-gold transition-colors'
-    >
+    <button type='button' onClick={open} aria-label={`Shopping cart, ${count} item${count === 1 ? "" : "s"}`} className={iconBtn}>
       <Icon name='cart' className='w-5 h-5' />
       {count > 0 && (
         <motion.span
@@ -23,7 +24,7 @@ const CartButton = () => {
           initial={{ scale: 0.4 }}
           animate={{ scale: 1 }}
           transition={{ type: "spring", stiffness: 500, damping: 18 }}
-          className='absolute -top-1 -right-1 min-w-[20px] h-5 px-1 rounded-full bg-lupin text-ink text-[11px] font-bold flex items-center justify-center'
+          className='absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 rounded-full bg-lupin text-ink text-[10px] font-bold flex items-center justify-center'
         >
           {count}
         </motion.span>
@@ -32,104 +33,196 @@ const CartButton = () => {
   );
 };
 
+const ShopMenu = () => {
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+  useEffect(() => {
+    const onDoc = (e) => !ref.current?.contains(e.target) && setOpen(false);
+    document.addEventListener("pointerdown", onDoc);
+    return () => document.removeEventListener("pointerdown", onDoc);
+  }, []);
+  return (
+    <li ref={ref} className='relative' onMouseEnter={() => setOpen(true)} onMouseLeave={() => setOpen(false)}>
+      <button
+        type='button'
+        aria-expanded={open}
+        aria-haspopup='true'
+        onClick={() => setOpen((o) => !o)}
+        className='flex items-center gap-1 text-[14px] font-semibold text-secondary hover:text-cream'
+      >
+        Shop <Icon name='chevron' className={`w-4 h-4 transition-transform ${open ? "rotate-180" : ""}`} strokeWidth={2.25} />
+      </button>
+      <AnimatePresence>
+        {open && (
+          <motion.div
+            initial={{ opacity: 0, y: 6 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 6 }}
+            transition={{ duration: 0.15 }}
+            className='absolute left-0 top-full pt-3 z-20'
+          >
+            <ul className='w-[260px] bg-tertiary border border-ink/10 rounded-2xl shadow-card p-2'>
+              {products.map((p) => (
+                <li key={p.id}>
+                  <Link
+                    to={{ pathname: "/", hash: `#product-${p.id}` }}
+                    onClick={() => setOpen(false)}
+                    className='flex items-center justify-between rounded-xl px-3 py-2.5 hover:bg-primary'
+                  >
+                    <span className='text-[14px] font-semibold text-cream'>{p.name.replace("LupiCrunch ", "")}</span>
+                    <span className='text-[12px] text-secondary'>{p.protein}</span>
+                  </Link>
+                </li>
+              ))}
+              <li className='border-t border-ink/10 mt-1 pt-1'>
+                <Link
+                  to={{ pathname: "/", hash: "#products" }}
+                  onClick={() => setOpen(false)}
+                  className='flex items-center gap-1.5 rounded-xl px-3 py-2.5 text-[14px] font-bold text-gold hover:bg-primary'
+                >
+                  Shop all <Icon name='arrow' className='w-4 h-4' strokeWidth={2.25} />
+                </Link>
+              </li>
+            </ul>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </li>
+  );
+};
+
 const Navbar = () => {
-  const [active, setActive] = useState("");
-  const [toggle, setToggle] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [dialog, setDialog] = useState(null); // "search" | "login" | "track" | null
+  const location = useLocation();
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 60);
+    const handleScroll = () => setScrolled(window.scrollY > 40);
     handleScroll();
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => setMenuOpen(false), [location]);
+
+  const isActive = (item) =>
+    item.hash ? location.pathname === "/" && location.hash === `#${item.hash}` : location.pathname === item.to && !location.hash;
+
   return (
-    <header className='fixed top-0 inset-x-0 z-30'>
-    <p className='bg-ink text-[#F5F1E8] text-center text-[12px] sm:text-[13px] font-semibold tracking-wide py-2 px-4'>
-      Free shipping over ₹{FREE_SHIPPING_AT} · Use code <span className='text-lupin font-bold'>SEVEN15</span> for 15% off
-    </p>
-    <nav
-      className={`${styles.paddingX} w-full flex items-center py-3.5 transition-colors duration-300 ${
-        scrolled ? "bg-primary/90 backdrop-blur-md border-b border-ink/10" : "bg-transparent"
-      }`}
-    >
-      <div className='w-full flex justify-between items-center max-w-7xl mx-auto gap-4'>
-        <Link
-          to='/'
-          className='flex items-center gap-3'
-          onClick={() => {
-            setActive("");
-            window.scrollTo(0, 0);
-          }}
+    <>
+      <header className='fixed top-0 inset-x-0 z-30'>
+        <p className='bg-ink text-[#F5F1E8] text-center text-[12px] sm:text-[13px] font-semibold tracking-wide py-2 px-4'>
+          Free shipping over ₹{FREE_SHIPPING_AT} · Use code <span className='text-lupin font-bold'>SEVEN15</span> for 15% off
+        </p>
+        <nav
+          className={`${styles.paddingX} py-3 transition-colors duration-300 ${
+            scrolled || location.pathname !== "/" ? "bg-primary/95 backdrop-blur-md border-b border-ink/10" : "bg-transparent"
+          }`}
         >
-          <img src={`${import.meta.env.BASE_URL}logo.svg`} alt='' className='w-10 h-10' />
-          <div className='leading-none'>
-            <p className='font-display text-cream text-[21px] font-extrabold tracking-tight'>NUTRUMMY</p>
-            <p className='text-gold text-[10px] font-bold tracking-[0.25em] mt-1'>LUPIN SUPERFOOD</p>
-          </div>
-        </Link>
-
-        <ul className='list-none hidden lg:flex flex-row items-center gap-8'>
-          {navLinks.map((nav) => (
-            <li
-              key={nav.id}
-              className={`${
-                active === nav.title ? "text-cream" : "text-secondary"
-              } hover:text-cream text-[15px] font-semibold cursor-pointer transition-colors`}
-              onClick={() => setActive(nav.title)}
-            >
-              <a href={`#${nav.id}`}>{nav.title}</a>
-            </li>
-          ))}
-        </ul>
-
-        <div className='flex items-center gap-3'>
-          <a
-            href='#products'
-            className='hidden sm:inline-flex bg-lupin text-ink text-[14px] font-semibold px-5 py-2.5 rounded-full hover:bg-ink hover:text-primary transition-colors'
-          >
-            Shop now
-          </a>
-          <CartButton />
-          <div className='lg:hidden relative'>
-            <button
-              type='button'
-              aria-label={toggle ? "Close menu" : "Open menu"}
-              aria-expanded={toggle}
-              onClick={() => setToggle(!toggle)}
-              className='w-11 h-11 flex items-center justify-center text-cream'
-            >
-              <Icon name={toggle ? "close" : "menu"} className='w-6 h-6' />
-            </button>
-
-            <div
-              className={`${
-                !toggle ? "hidden" : "flex"
-              } p-6 bg-tertiary border border-ink/10 absolute top-14 right-0 min-w-[200px] z-10 rounded-2xl shadow-card`}
-            >
-              <ul className='list-none flex items-start flex-1 flex-col gap-4'>
-                {navLinks.map((nav) => (
-                  <li
-                    key={nav.id}
-                    className={`font-semibold cursor-pointer text-[16px] ${
-                      active === nav.title ? "text-gold" : "text-cream"
-                    }`}
-                    onClick={() => {
-                      setToggle(false);
-                      setActive(nav.title);
-                    }}
-                  >
-                    <a href={`#${nav.id}`}>{nav.title}</a>
-                  </li>
-                ))}
+          {/* Three columns: links | centred logo | icons */}
+          <div className='max-w-7xl mx-auto grid grid-cols-[1fr_auto_1fr] items-center gap-4'>
+            <div className='flex items-center'>
+              <button
+                type='button'
+                aria-label={menuOpen ? "Close menu" : "Open menu"}
+                aria-expanded={menuOpen}
+                onClick={() => setMenuOpen((o) => !o)}
+                className={`${iconBtn} xl:hidden -ml-2`}
+              >
+                <Icon name={menuOpen ? "close" : "menu"} className='w-6 h-6' />
+              </button>
+              <ul className='hidden xl:flex items-center gap-6'>
+                {navLinks.map((item) =>
+                  item.children ? (
+                    <ShopMenu key={item.title} />
+                  ) : (
+                    <li key={item.title}>
+                      <NavLink
+                        to={linkTo(item)}
+                        className={`text-[14px] font-semibold transition-colors ${
+                          isActive(item) ? "text-cream" : "text-secondary hover:text-cream"
+                        }`}
+                      >
+                        {item.title}
+                      </NavLink>
+                    </li>
+                  )
+                )}
               </ul>
             </div>
+
+            <Link to='/' onClick={() => window.scrollTo(0, 0)} className='flex flex-col items-center gap-0.5' aria-label='NUTRUMMY home'>
+              <div className='flex items-center gap-2'>
+                <img src={`${import.meta.env.BASE_URL}logo.svg`} alt='' className='w-9 h-9 sm:w-10 sm:h-10' />
+                <span className='font-display text-cream text-[19px] sm:text-[22px] font-extrabold tracking-tight leading-none'>
+                  NUTRUMMY
+                </span>
+              </div>
+              <span className='hidden sm:block text-gold text-[9px] font-bold tracking-[0.3em] leading-none'>LUPIN SUPERFOOD</span>
+            </Link>
+
+            <div className='flex items-center justify-end gap-0.5 sm:gap-1'>
+              <button type='button' onClick={() => setDialog("search")} aria-label='Search' className={iconBtn}>
+                <Icon name='search' className='w-5 h-5' />
+              </button>
+              <button type='button' onClick={() => setDialog("login")} aria-label='Login' className={`${iconBtn} hidden sm:flex`}>
+                <Icon name='user' className='w-5 h-5' />
+              </button>
+              <button type='button' onClick={() => setDialog("track")} aria-label='Track order' className={`${iconBtn} hidden sm:flex`}>
+                <Icon name='package' className='w-5 h-5' />
+              </button>
+              <CartButton />
+            </div>
           </div>
-        </div>
-      </div>
-    </nav>
-    </header>
+
+          {/* Mobile / tablet menu */}
+          <AnimatePresence>
+            {menuOpen && (
+              <motion.div
+                initial={{ opacity: 0, y: -8 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                className='xl:hidden max-w-7xl mx-auto mt-3 bg-tertiary border border-ink/10 rounded-2xl shadow-card p-5 max-h-[70vh] overflow-y-auto'
+              >
+                <ul className='grid gap-1'>
+                  {navLinks.map((item) => (
+                    <li key={item.title}>
+                      <Link to={linkTo(item)} className='block py-2 text-[16px] font-bold text-cream hover:text-gold'>
+                        {item.title}
+                      </Link>
+                      {item.children && (
+                        <ul className='ml-3 mb-2 border-l border-ink/10 pl-3 grid gap-1'>
+                          {products.map((p) => (
+                            <li key={p.id}>
+                              <Link to={{ pathname: "/", hash: `#product-${p.id}` }} className='block py-1.5 text-[14px] text-secondary hover:text-gold'>
+                                {p.name.replace("LupiCrunch ", "")}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      )}
+                    </li>
+                  ))}
+                </ul>
+                <div className='mt-4 pt-4 border-t border-ink/10 flex gap-2 sm:hidden'>
+                  <button type='button' onClick={() => setDialog("login")} className='flex-1 inline-flex items-center justify-center gap-2 py-2.5 rounded-full border border-ink/15 text-cream text-[14px] font-semibold'>
+                    <Icon name='user' className='w-4 h-4' /> Login
+                  </button>
+                  <button type='button' onClick={() => setDialog("track")} className='flex-1 inline-flex items-center justify-center gap-2 py-2.5 rounded-full border border-ink/15 text-cream text-[14px] font-semibold'>
+                    <Icon name='package' className='w-4 h-4' /> Track
+                  </button>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </nav>
+      </header>
+
+      <SearchDialog open={dialog === "search"} onClose={() => setDialog(null)} />
+      <LoginDialog open={dialog === "login"} onClose={() => setDialog(null)} />
+      <TrackDialog open={dialog === "track"} onClose={() => setDialog(null)} />
+    </>
   );
 };
 

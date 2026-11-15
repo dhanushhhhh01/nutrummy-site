@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import { useCart, formatINR } from "../context/CartContext";
 import { contactInfo, FREE_SHIPPING_AT } from "../constants";
 import Icon from "./Icon";
+import ProductImage from "./ProductImage";
 
 const inputClass =
   "w-full bg-tertiary py-3 px-4 placeholder:text-muted text-cream rounded-xl outline-none border border-ink/15 focus:border-gold font-medium text-[14px] transition-colors";
@@ -158,9 +160,9 @@ const CartDrawer = () => {
                 <Icon name='cart' className='w-12 h-12 text-secondary' />
                 <p className='mt-4 text-cream font-semibold'>Your cart is empty</p>
                 <p className='mt-1 text-secondary text-[14px]'>Add a high-protein breakfast to get started.</p>
-                <a href='#products' onClick={close} className='mt-6 bg-lupin text-ink font-semibold px-6 py-3 rounded-full hover:bg-ink hover:text-primary'>
+                <Link to={{ pathname: "/", hash: "#products" }} onClick={close} className='mt-6 bg-lupin text-ink font-semibold px-6 py-3 rounded-full hover:bg-ink hover:text-primary'>
                   Browse products
-                </a>
+                </Link>
               </div>
             )}
 
@@ -187,15 +189,8 @@ const CartDrawer = () => {
                 <ul className='flex-1 overflow-y-auto px-6 py-4 space-y-3'>
                   {items.map((i) => (
                     <li key={i.key} className='bg-tertiary rounded-2xl border border-ink/10 p-4 flex gap-4'>
-                      <div
-                        className='w-16 h-20 rounded-lg shrink-0 flex flex-col items-center justify-center text-center'
-                        style={{ background: i.product.body }}
-                        aria-hidden
-                      >
-                        <span className='font-display text-[11px] font-bold text-[#FFF4E0] leading-none'>{i.product.short[0]}</span>
-                        <span className='text-[8px] font-bold tracking-wider mt-1' style={{ color: i.product.accent }}>
-                          {i.product.short[1]}
-                        </span>
+                      <div className='w-16 h-20 shrink-0 rounded-lg bg-primary flex items-center justify-center overflow-hidden'>
+                        <ProductImage product={i.product} size='thumb' className='w-full h-full' />
                       </div>
                       <div className='flex-1 min-w-0'>
                         <div className='flex justify-between gap-2'>

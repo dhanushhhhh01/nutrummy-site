@@ -1,9 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 import { products, contactInfo, FREE_SHIPPING_AT, recipes } from "../constants";
 import { useCart, formatINR } from "../context/CartContext";
 import Icon from "./Icon";
+import ProductImage from "./ProductImage";
 
 /*
  * NutriBot: a client-side assistant that answers common questions from the site's own
@@ -52,7 +54,19 @@ const reply = (raw) => {
       products: ["lupicrunch"],
     };
 
-  if (has(q, ["allerg", "peanut", "gluten", "nut free", "safe"]))
+  if (has(q, ["gluten"]))
+    return {
+      text: "Lupin itself is naturally gluten-free. Whether a finished product can be called gluten-free depends on its full recipe, processing environment and regulations, so please check the pack label. For details, email the team.",
+      contact: true,
+    };
+
+  if (has(q, ["career", "job", "hiring", "work with", "join"]))
+    return { text: "We're a small, growing team and always happy to hear from people who care about honest food. See our Careers page.", link: { to: "/career", label: "Open Careers" } };
+
+  if (has(q, ["blog", "article", "read", "learn"]))
+    return { text: "Read 'Discover Lupin' and 'Protein, Every Day' in our journal.", link: { to: "/blog", label: "Open the journal" } };
+
+  if (has(q, ["allerg", "peanut", "nut free", "safe"]))
     return {
       text: "Lupin is a legume, and people with a peanut allergy can also react to lupin. Our muesli contains almonds. Please check the pack label and talk to your doctor if you have food allergies. For ingredient specifics, email us.",
       contact: true,
@@ -111,9 +125,9 @@ const BotProduct = ({ id }) => {
   if (!p) return null;
   return (
     <div className='mt-2 flex items-center gap-3 bg-primary rounded-xl p-2.5 border border-ink/10'>
-      <div className='w-10 h-12 rounded-md shrink-0 flex items-center justify-center' style={{ background: p.body }} aria-hidden>
-        <span className='text-[8px] font-bold text-[#FFF4E0] text-center leading-tight'>{p.short[0]}</span>
-      </div>
+      <div className='w-10 h-12 shrink-0 rounded-md bg-primary flex items-center justify-center overflow-hidden'>
+              <ProductImage product={p} size='thumb' className='w-full h-full' />
+            </div>
       <div className='flex-1 min-w-0'>
         <p className='text-[13px] font-semibold text-cream leading-tight'>{p.name}</p>
         <p className='text-[12px] text-secondary'>
@@ -198,14 +212,23 @@ const Chatbot = () => {
                     {m.products?.map((id) => (
                       <BotProduct key={id} id={id} />
                     ))}
+                    {m.link && (
+                      <Link
+                        to={m.link.to}
+                        onClick={() => setOpen(false)}
+                        className='mt-2 mr-3 inline-flex items-center gap-1 text-gold font-semibold text-[13px]'
+                      >
+                        {m.link.label} <Icon name='arrow' className='w-3.5 h-3.5' strokeWidth={2.25} />
+                      </Link>
+                    )}
                     {m.contact && (
-                      <a
-                        href='#contact'
+                      <Link
+                        to={{ pathname: "/", hash: "#contact" }}
                         onClick={() => setOpen(false)}
                         className='mt-2 inline-flex items-center gap-1 text-gold font-semibold text-[13px]'
                       >
                         Contact the team <Icon name='arrow' className='w-3.5 h-3.5' strokeWidth={2.25} />
-                      </a>
+                      </Link>
                     )}
                   </div>
                   {m.quick && i === messages.length - 1 && (

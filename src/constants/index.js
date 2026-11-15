@@ -1,9 +1,12 @@
+// Navigation from the final content doc ("lupin website content.docx").
+// `to` is a route; `hash` scrolls to a section on the home page.
 export const navLinks = [
-  { id: "story", title: "Our Story" },
-  { id: "products", title: "Products" },
-  { id: "compare", title: "Nutrition" },
-  { id: "partners", title: "Partners" },
-  { id: "contact", title: "Contact" },
+  { title: "Home", to: "/" },
+  { title: "Shop", to: "/", hash: "products", children: "products" },
+  { title: "Our Story", to: "/", hash: "story" },
+  { title: "Career", to: "/career" },
+  { title: "Blog", to: "/blog" },
+  { title: "Contact", to: "/", hash: "contact" },
 ];
 
 export const heroStats = [
@@ -20,6 +23,35 @@ export const claims = [
   "No Artificial Preservatives",
   "Clean, Honest Labels",
 ];
+
+export const story = {
+  paragraphs: [
+    'Somewhere along the way, healthy food got complicated. Long labels. Long words. Long lists of "why is that in there?"',
+    "We wanted something simpler: breakfasts and bakes with proper protein, made from ingredients you can actually name.",
+    "No maida. No artificial colours, flavours or preservatives.",
+  ],
+  pillars: [
+    {
+      label: "Our Vision",
+      title: "Honest food, every day.",
+      text: "To make honest, protein-rich food part of everyday life, where every ingredient earns its place and no one has to choose between healthy and delicious.",
+      icon: "sunrise",
+    },
+    {
+      label: "Our Mission",
+      title: "Make good food simple, honest and yum.",
+      text: "We craft wholesome breakfasts and bakes from real ingredients, without maida or artificial additives, so eating well feels effortless.",
+      icon: "sprout",
+    },
+    {
+      label: "Our Promise",
+      title: "Every ingredient earns its place.",
+      text: "If we can't explain why it's in the pouch, it doesn't go in the pouch.",
+      icon: "shield",
+    },
+  ],
+  signoff: "Simple. Honest. Yum. Always.",
+};
 
 export const benefits = [
   {
@@ -254,6 +286,7 @@ export const COUPONS = { SEVEN15: 0.15 };
 
 export const contactInfo = {
   company: "Lupi Foods Pvt Ltd",
+  brand: "LUPI FOODS",
   address: "Bengaluru, Karnataka, India",
   email: "contact@nutrummy.com",
   phone: "+91 98765 43210",
@@ -267,3 +300,38 @@ export const enquiryTypes = [
   "Product enquiry",
   "Feedback or just saying hi",
 ];
+
+// Customer reviews ("Straight from Happy Tummies"). Add real reviews here exactly as written;
+// the section shows a "share your review" prompt until this list has entries.
+// Shape: { name: "Asha R.", city: "Bengaluru", product: "LupiCrunch", text: "…" }
+export const reviews = [];
+
+export const careers = {
+  title: "Come build honest food with us.",
+  intro:
+    "We're a small, growing team making protein-rich breakfasts and bakes that don't cut corners. If that sounds like your kind of work, we'd love to meet you.",
+  reasons: [
+    {
+      title: "No compromise on quality",
+      text: "Every recipe is tested until it meets our standard: clean ingredients, zero maida, exceptional taste.",
+      icon: "shield",
+    },
+    {
+      title: "Smart food science",
+      text: "We innovate with ancient legumes like Sweet Lupin to create functional, everyday breakfast and baking staples.",
+      icon: "sprout",
+    },
+    {
+      title: "People-first team",
+      text: "Autonomy, curiosity and a shared obsession with delicious, real nutrition.",
+      icon: "sunrise",
+    },
+  ],
+  closing: "Think you would fit in? We are always happy to hear from people who care about honest food as much as we do.",
+  roles: [
+    "Food Technologist & NPD Specialist",
+    "D2C Brand & Digital Marketing Lead",
+    "Institutional & Bulk Gifting Manager",
+    "General application",
+  ],
+};

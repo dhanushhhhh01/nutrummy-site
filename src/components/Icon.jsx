@@ -133,6 +133,26 @@ paths.plus = (
   </>
 );
 paths.chat = <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />;
+paths.search = (
+  <>
+    <circle cx='11' cy='11' r='8' />
+    <path d='m21 21-4.3-4.3' />
+  </>
+);
+paths.user = (
+  <>
+    <circle cx='12' cy='8' r='5' />
+    <path d='M20 21a8 8 0 0 0-16 0' />
+  </>
+);
+paths.package = (
+  <>
+    <path d='M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z' />
+    <path d='M12 22V12' />
+    <path d='m3.3 7 8.7 5 8.7-5' />
+  </>
+);
+paths.chevron = <path d='m6 9 6 6 6-6' />;
 paths.minus = <path d='M5 12h14' />;
 paths.trash = (
   <>

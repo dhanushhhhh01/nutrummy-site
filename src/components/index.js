@@ -11,6 +11,7 @@ import Contact from "./Contact";
 import Footer from "./Footer";
 import Partners from "./Partners";
 import Values from "./Values";
+import Reviews from "./Reviews";
 import Newsletter from "./Newsletter";
 import CartDrawer from "./CartDrawer";
 import Chatbot from "./Chatbot";
@@ -29,6 +30,7 @@ export {
   Footer,
   Partners,
   Values,
+  Reviews,
   Newsletter,
   CartDrawer,
   Chatbot,

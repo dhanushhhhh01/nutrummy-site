@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import { styles } from "../styles";
 import { navLinks, contactInfo } from "../constants";
@@ -9,8 +10,8 @@ const Footer = () => (
     <div className={`max-w-7xl mx-auto ${styles.paddingX} py-14`}>
       <div className='flex flex-col md:flex-row md:items-end justify-between gap-10'>
         <div className='max-w-md'>
-          <p className='font-display font-semibold text-[40px] sm:text-[52px] leading-[1]'>
-            Eat <span className='text-lupin'>real</span> food.
+          <p className='font-display font-extrabold text-[40px] sm:text-[52px] leading-[1] tracking-[-0.03em]'>
+            Simple. Honest. <span className='text-lupin'>Yum.</span>
           </p>
           <p className='mt-4 text-[#C9CFDB] text-[15px] leading-[26px]'>
             No shortcuts. No synthetic isolates. Just ancient Sweet Lupin, golden multigrains and
@@ -19,10 +20,13 @@ const Footer = () => (
         </div>
         <ul className='flex flex-wrap gap-x-8 gap-y-3'>
           {navLinks.map((n) => (
-            <li key={n.id}>
-              <a href={`#${n.id}`} className='text-[#C9CFDB] hover:text-lupin text-[14px]'>
+            <li key={n.title}>
+              <Link
+                to={n.hash ? { pathname: n.to, hash: `#${n.hash}` } : n.to}
+                className='text-[#C9CFDB] hover:text-lupin text-[14px]'
+              >
                 {n.title}
-              </a>
+              </Link>
             </li>
           ))}
         </ul>

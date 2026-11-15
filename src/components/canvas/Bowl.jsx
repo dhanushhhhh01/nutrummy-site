@@ -118,23 +118,23 @@ const Toppings = () => {
   );
 };
 
-const FloatingBits = () => {
+const FloatingBits = ({ count = 14, spread = 1 }) => {
   const ref = useRef();
   useFrame((_, delta) => {
     ref.current.rotation.y += delta * 0.18;
   });
   const bits = useMemo(
     () =>
-      [...Array(14)].map((_, i) => {
-        const a = (i / 14) * Math.PI * 2;
-        const r = 2.6 + rand(i + 900) * 0.8;
+      [...Array(count)].map((_, i) => {
+        const a = (i / count) * Math.PI * 2;
+        const r = (2.6 + rand(i + 900) * 0.8) * spread;
         return {
-          position: [Math.cos(a) * r, 1.4 + rand(i + 950) * 1.8, Math.sin(a) * r],
+          position: [Math.cos(a) * r, (1.4 + rand(i + 950) * 1.8) * spread - (spread - 1) * 2.2, Math.sin(a) * r],
           lupin: i % 2 === 0,
           size: 0.1 + rand(i + 990) * 0.08,
         };
       }),
-    []
+    [count, spread]
   );
   return (
     <group ref={ref}>
@@ -158,6 +158,12 @@ const FloatingBits = () => {
   );
 };
 
+const Particles = ({ isMobile }) => (
+  <group position={[isMobile ? 0 : 0.6, -1.2, 0]}>
+    <FloatingBits count={isMobile ? 16 : 26} spread={isMobile ? 1.05 : 1.35} />
+  </group>
+);
+
 const Scene = ({ isMobile }) => (
   <group position={isMobile ? [0, -1.3, 0] : [0.9, -1.4, 0]} scale={isMobile ? 0.85 : 1}>
     <BowlBody />
@@ -170,7 +176,7 @@ const Scene = ({ isMobile }) => (
   </group>
 );
 
-const BowlCanvas = () => {
+const BowlCanvas = ({ particlesOnly = false }) => {
   const isMobile = useIsMobile();
   return (
     <Canvas
@@ -202,7 +208,7 @@ const BowlCanvas = () => {
           maxPolarAngle={Math.PI / 2.15}
           minPolarAngle={Math.PI / 3.2}
         />
-        <Scene isMobile={isMobile} />
+        {particlesOnly ? <Particles isMobile={isMobile} /> : <Scene isMobile={isMobile} />}
       </Suspense>
       <Preload all />
     </Canvas>

@@ -15,7 +15,6 @@ import Reviews from "./Reviews";
 import Newsletter from "./Newsletter";
 import CartDrawer from "./CartDrawer";
 import Chatbot from "./Chatbot";
-import CanvasLoader from "./Loader";
 
 export {
   Hero,
@@ -34,7 +33,6 @@ export {
   Newsletter,
   CartDrawer,
   Chatbot,
-  CanvasLoader,
   BowlCanvas,
   BallCanvas,
   PouchCanvas,

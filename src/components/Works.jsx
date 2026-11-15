@@ -9,6 +9,7 @@ import { fadeIn, textVariant } from "../utils/motion";
 import { useCart, formatINR } from "../context/CartContext";
 import ProductImage from "./ProductImage";
 import Icon from "./Icon";
+import { Modal } from "./HeaderDialogs";
 
 const ProductCard = ({ product }) => {
   const { id, name, short, category, badge, tagline, description, protein, packs, body, accent, tags } = product;
@@ -16,6 +17,7 @@ const ProductCard = ({ product }) => {
   const [packId, setPackId] = useState(packs[0].id);
   const [justAdded, setJustAdded] = useState(false);
   const [showPanel, setShowPanel] = useState(false);
+  const [showLabel, setShowLabel] = useState(false);
   const n = product.nutrition;
   const pack = packs.find((p) => p.id === packId);
   const fromPrice = Math.min(...packs.map((p) => p.price));
@@ -62,6 +64,15 @@ const ProductCard = ({ product }) => {
               <dd className='font-medium'>{n.keyIngredients}</dd>
               <dt className='mt-2 text-[#C9DDE2]'>How to serve</dt>
               <dd className='font-medium'>{n.howToServe}</dd>
+              {product.labelImage && (
+                <button
+                  type='button'
+                  onClick={() => setShowLabel(true)}
+                  className='mt-3 inline-flex items-center gap-1.5 bg-sun text-ink text-[11px] font-bold px-3 py-1.5 rounded-full border-2 border-[#F5F1E8]'
+                >
+                  See full pack label <Icon name='arrow' className='w-3.5 h-3.5' strokeWidth={2.5} />
+                </button>
+              )}
             </motion.dl>
           ) : (
             <motion.div
@@ -166,6 +177,15 @@ const ProductCard = ({ product }) => {
         )}
       </div>
     </Tilt>
+    {product.labelImage && (
+      <Modal open={showLabel} onClose={() => setShowLabel(false)} title={`${name}: pack label`} wide>
+        <img
+          src={`${import.meta.env.BASE_URL}${product.labelImage}`}
+          alt={`Back of the ${name} pack showing ingredients, nutrition facts and serving suggestions`}
+          className='w-full max-h-[70vh] object-contain rounded-xl border-2 border-ink bg-[#F4F4F4]'
+        />
+      </Modal>
+    )}
     </div>
   );
 };

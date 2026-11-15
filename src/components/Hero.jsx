@@ -9,11 +9,18 @@ import Icon from "./Icon";
 const Hero = () => {
   return (
     <section className='relative w-full min-h-[100svh] mx-auto overflow-hidden lg:pb-32'>
+      {/* Breakfast-table photo from the reference site, faded on the text side for readability */}
+      <img
+        src={`${import.meta.env.BASE_URL}images/hero-table.jpg`}
+        alt=''
+        fetchpriority='high'
+        className='hidden lg:block absolute inset-0 w-full h-full object-cover object-[100%_center]'
+      />
+      <div className='hidden lg:block absolute inset-0 lg:bg-[linear-gradient(90deg,#F5F1E8_0%,#F5F1E8_40%,rgba(245,241,232,0.7)_52%,rgba(245,241,232,0)_70%)]' />
+
       {/* Colour blobs */}
-      <div className='blob w-[420px] h-[420px] bg-sun -top-20 -left-24' />
-      <div className='blob w-[360px] h-[360px] bg-sky top-[30%] right-[8%]' />
-      <div className='blob w-[300px] h-[300px] bg-tangerine bottom-10 left-[35%]' />
-      <div className='blob w-[260px] h-[260px] bg-leaf top-[12%] right-[38%] opacity-40' />
+      <div className='blob w-[420px] h-[420px] bg-sun -top-20 -left-24 opacity-40' />
+      <div className='blob w-[300px] h-[300px] bg-tangerine bottom-10 left-[30%] opacity-25' />
 
       {/* Stickers */}
       <div className='hidden lg:block absolute z-10 right-[6%] top-[150px] pointer-events-none'>
@@ -82,8 +89,14 @@ const Hero = () => {
       </div>
 
       {/* 3D bowl scene: below the copy on phones, beside it on desktop */}
-      <div className='relative w-full h-[340px] sm:h-[420px] mb-28 lg:mb-0 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[58%] lg:h-full'>
-        <BowlCanvas />
+      <div className='relative mx-6 sm:mx-16 h-[260px] sm:h-[420px] mt-10 mb-36 rounded-3xl overflow-hidden border-2 border-ink shadow-pop lg:m-0 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[58%] lg:h-full lg:rounded-none lg:border-0 lg:shadow-none lg:overflow-visible'>
+        {/* Phones: the photo at natural proportions in a framed card */}
+        <img
+          src={`${import.meta.env.BASE_URL}images/hero-table.jpg`}
+          alt='A bowl of NUTRUMMY cereal with milk being poured, fresh berries and a cereal pack on a breakfast table'
+          className='lg:hidden absolute inset-0 w-full h-full object-cover'
+        />
+        <BowlCanvas particlesOnly />
       </div>
 
       {/* Tilted two-colour claims marquee */}

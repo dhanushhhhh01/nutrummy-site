@@ -184,6 +184,7 @@ export const ingredients = [
 export const products = [
   {
     id: "lupicrunch",
+    labelImage: "images/lupicrunch-label.jpg",
     imageFit: "contain",
     theme: { soft: "#FFF1C2", solid: "#FFC93C" },
     chip: "High Protein Muesli",

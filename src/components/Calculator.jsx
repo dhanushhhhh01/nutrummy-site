@@ -108,7 +108,7 @@ const Calculator = () => {
               max={130}
               value={weight}
               onChange={(e) => setWeight(Number(e.target.value))}
-              className='mt-4 w-full accent-[#EE4E6E]'
+              className='mt-4 w-full accent-[#F5B82E]'
             />
             <div className='flex justify-between text-[12px] text-secondary mt-1'>
               <span>35 kg</span>

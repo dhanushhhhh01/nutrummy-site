@@ -22,7 +22,7 @@ const MomentCard = ({ moment }) => (
     }}
     contentArrowStyle={{ borderRight: "7px solid #FFFFFF" }}
     date={moment.time}
-    iconStyle={{ background: "#FFFFFF", color: "#C7254A", boxShadow: "0 0 0 2px #C7254A, 0 0 0 7px #F5F1E8" }}
+    iconStyle={{ background: "#FFFFFF", color: "#8A5100", boxShadow: "0 0 0 2px #8A5100, 0 0 0 7px #F5F1E8" }}
     icon={
       <div className='flex justify-center items-center w-full h-full'>
         <Icon name={moment.icon} className='w-[45%] h-[45%]' />
@@ -54,7 +54,7 @@ const Experience = () => (
     </motion.div>
 
     <div className='mt-16 flex flex-col'>
-      <VerticalTimeline lineColor='#C7254A'>
+      <VerticalTimeline lineColor='#8A5100'>
         {moments.map((m) => (
           <MomentCard key={m.time} moment={m} />
         ))}

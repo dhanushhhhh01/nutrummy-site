@@ -53,7 +53,7 @@ export const drawPouchLabel = (canvas) => {
   ctx.beginPath();
   ctx.ellipse(0, -20, 150, 28, 0, 0, Math.PI * 2);
   ctx.fill();
-  const clusters = ["#8a5a2b", "#c48a3a", "#f5b82e", "#5d3518", "#B82C45"];
+  const clusters = ["#8a5a2b", "#c48a3a", "#f5b82e", "#5d3518", "#003B4A"];
   for (let i = 0; i < 46; i++) {
     const a = (i * 137.5 * Math.PI) / 180;
     const r = 18 + ((i * 37) % 120);
@@ -77,7 +77,7 @@ export const drawPouchLabel = (canvas) => {
   ctx.save();
   ctx.translate(470, 520);
   ctx.rotate(-0.25);
-  ctx.fillStyle = "#B82C45";
+  ctx.fillStyle = "#003B4A";
   ctx.beginPath();
   ctx.arc(0, 0, 78, 0, Math.PI * 2);
   ctx.fill();

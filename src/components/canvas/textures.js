@@ -1,7 +1,7 @@
 import * as THREE from "three";
 
-const DISPLAY = '"Fraunces", Georgia, serif';
-const SANS = '"Poppins", system-ui, sans-serif';
+const DISPLAY = '"Plus Jakarta Sans", system-ui, sans-serif';
+const SANS = '"Plus Jakarta Sans", system-ui, sans-serif';
 
 /** Draws the NUTRUMMY pouch front label onto a 2D canvas. */
 export const drawPouchLabel = (canvas) => {
@@ -147,7 +147,7 @@ export const drawElement = (canvas, symbol, stat) => {
   canvas.height = 256;
   const ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, 256, 256);
-  ctx.fillStyle = "rgba(18,10,5,0.92)";
+  ctx.fillStyle = "rgba(0,59,74,0.94)";
   ctx.beginPath();
   ctx.roundRect ? ctx.roundRect(28, 28, 200, 200, 26) : ctx.rect(28, 28, 200, 200);
   ctx.fill();
@@ -173,7 +173,7 @@ export const makeCanvasTexture = (draw, ...args) => {
   return texture;
 };
 
-/** Redraw once web fonts have loaded so labels use Fraunces / Poppins. */
+/** Redraw once web fonts have loaded so labels use Plus Jakarta Sans. */
 export const refreshWhenFontsReady = (texture, draw, ...args) => {
   if (!document.fonts?.ready) return;
   document.fonts.ready.then(() => {

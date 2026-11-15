@@ -97,68 +97,92 @@ export const ingredients = [
   { name: "Chia & Seeds", symbol: "Cs", stat: "Omega-3", color: "#DCCFBE" },
 ];
 
+// Prices and pack sizes mirror the live NUTRUMMY site.
+// NOTE: the live site lists Cookie Premix 500g at ₹279, the same as 250g. Copied as-is; please confirm.
 export const products = [
   {
+    id: "lupicrunch",
     name: "LupiCrunch High Protein Muesli",
     short: ["Lupi", "CRUNCH"],
     category: "Muesli",
     badge: "Bestseller",
+    flavour: "Chocolate",
     tagline: "Crunchy nutrition in every bowl",
     description:
       "Chocolate muesli with Lupin super legume, 30% multigrains, roasted almonds and monk fruit sweetness.",
     protein: "35g",
-    price: "₹349",
-    packs: "200g · 500g",
+    packs: [
+      { id: "200g", label: "200g pouch", price: 349 },
+      { id: "500g", label: "500g family pack", price: 749 },
+    ],
     body: "#3d2210",
     accent: "#F5B82E",
     tags: ["35g protein", "0g added sugar", "Chocolate"],
+    goals: ["muscle", "breakfast", "snack"],
   },
   {
+    id: "oats",
     name: "High Protein Oats",
     short: ["Protein", "OATS"],
     category: "Oats",
     badge: "Popular",
+    flavour: "Chocolate",
     tagline: "Clean, sustained energy",
     description:
       "Whole rolled oats with Lupin protein, cocoa, berries and seeds for warm bowls and overnight jars.",
     protein: "35g",
-    price: "₹199",
-    packs: "100g · 400g",
+    packs: [
+      { id: "100g", label: "100g pouch", price: 199 },
+      { id: "400g", label: "400g pouch", price: 499 },
+    ],
     body: "#4a1a24",
     accent: "#F2C6CF",
     tags: ["35g protein", "No preservatives", "Whole grain"],
+    goals: ["muscle", "weight", "breakfast"],
   },
   {
-    name: "Protein Cookie Premix",
-    short: ["Cookie", "PREMIX"],
-    category: "Bake mixes",
-    badge: "New launch",
-    tagline: "Secretly protein packed",
-    description:
-      "Bake chewy double-dark chocolate cookies at home in 10 minutes. No maida, no refined white sugar.",
-    protein: "21g",
-    price: "₹279",
-    packs: "250g · 500g",
-    body: "#2b1a12",
-    accent: "#E3B98A",
-    tags: ["21g protein", "Zero maida", "Double dark"],
-  },
-  {
+    id: "pancake",
     name: "Pancake & Waffle Mix",
     short: ["Pancake", "& WAFFLE"],
     category: "Bake mixes",
     badge: "Trending",
+    flavour: "Vanilla & golden grains",
     tagline: "Weekend café, weekday effort",
     description:
       "Fluffy golden pancake stacks and crisp Belgian waffles in 3 minutes. No artificial colours.",
     protein: "17g",
-    price: "₹299",
-    packs: "250g · 500g",
+    packs: [
+      { id: "250g", label: "250g pouch", price: 299 },
+      { id: "500g", label: "500g family pack", price: 549 },
+    ],
     body: "#5a3b0c",
     accent: "#FFE3A3",
     tags: ["17g protein", "No added sugar", "Vanilla"],
+    goals: ["kids", "breakfast"],
+  },
+  {
+    id: "cookie",
+    name: "Protein Cookie Premix",
+    short: ["Cookie", "PREMIX"],
+    category: "Bake mixes",
+    badge: "New launch",
+    flavour: "Double dark chocolate",
+    tagline: "Secretly protein packed",
+    description:
+      "Bake chewy double-dark chocolate cookies at home in 10 minutes. No maida, no refined white sugar.",
+    protein: "21g",
+    packs: [
+      { id: "250g", label: "250g pouch", price: 279 },
+      { id: "500g", label: "500g pouch", price: 279 },
+    ],
+    body: "#2b1a12",
+    accent: "#E3B98A",
+    tags: ["21g protein", "Zero maida", "Double dark"],
+    goals: ["kids", "snack"],
   },
 ];
+
+export const productCategories = ["All", "Muesli", "Oats", "Bake mixes"];
 
 export const comparison = [
   { factor: "Protein per 100g", us: 35, them: 7, max: 40, usLabel: "35g", themLabel: "6–8g", callout: "5.8× more protein" },
@@ -221,6 +245,12 @@ export const partners = [
     topic: "Bulk & corporate gifting",
   },
 ];
+
+// Free shipping threshold shown on the current NUTRUMMY site.
+export const FREE_SHIPPING_AT = 499;
+
+// Promo codes accepted in the cart (SEVEN15 matches the live site).
+export const COUPONS = { SEVEN15: 0.15 };
 
 export const contactInfo = {
   company: "Lupi Foods Pvt Ltd",

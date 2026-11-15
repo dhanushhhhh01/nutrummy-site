@@ -106,6 +106,42 @@ const paths = {
   ),
 };
 
+paths.menu = (
+  <>
+    <path d='M4 7h16' />
+    <path d='M4 12h16' />
+    <path d='M4 17h16' />
+  </>
+);
+paths.close = (
+  <>
+    <path d='M18 6 6 18' />
+    <path d='m6 6 12 12' />
+  </>
+);
+paths.cart = (
+  <>
+    <circle cx='8' cy='21' r='1' />
+    <circle cx='19' cy='21' r='1' />
+    <path d='M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12' />
+  </>
+);
+paths.plus = (
+  <>
+    <path d='M5 12h14' />
+    <path d='M12 5v14' />
+  </>
+);
+paths.chat = <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z" />;
+paths.minus = <path d='M5 12h14' />;
+paths.trash = (
+  <>
+    <path d='M3 6h18' />
+    <path d='M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6' />
+    <path d='M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2' />
+  </>
+);
+
 const Icon = ({ name, className = "w-6 h-6", filled = false, strokeWidth = 1.75 }) => (
   <svg
     viewBox='0 0 24 24'

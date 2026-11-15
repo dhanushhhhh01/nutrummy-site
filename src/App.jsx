@@ -12,30 +12,41 @@ import {
   Works,
   Recipes,
   Partners,
+  Values,
+  Newsletter,
+  CartDrawer,
+  Chatbot,
   GrainsCanvas,
 } from "./components";
+import { CartProvider } from "./context/CartContext";
 
 const App = () => {
   return (
     <BrowserRouter>
-      <div className='relative z-0 bg-primary'>
-        <div className='hero-glow grain relative'>
-          <Navbar />
-          <Hero />
+      <CartProvider>
+        <div className='relative z-0 bg-primary'>
+          <div className='hero-glow grain relative'>
+            <Navbar />
+            <Hero />
+          </div>
+          <About />
+          <Works />
+          <Values />
+          <Experience />
+          <Tech />
+          <Compare />
+          <Recipes />
+          <Partners />
+          <div className='relative z-0'>
+            <Contact />
+            <GrainsCanvas />
+          </div>
+          <Newsletter />
+          <Footer />
         </div>
-        <About />
-        <Experience />
-        <Tech />
-        <Works />
-        <Compare />
-        <Recipes />
-        <Partners />
-        <div className='relative z-0'>
-          <Contact />
-          <GrainsCanvas />
-        </div>
-        <Footer />
-      </div>
+        <CartDrawer />
+        <Chatbot />
+      </CartProvider>
     </BrowserRouter>
   );
 };

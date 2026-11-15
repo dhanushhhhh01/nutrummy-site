@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section className='relative w-full min-h-[100svh] lg:h-screen mx-auto overflow-hidden'>
       <div
-        className={`relative max-w-7xl mx-auto ${styles.paddingX} pt-[112px] lg:pt-[150px] flex flex-row items-start gap-5 pointer-events-none`}
+        className={`relative max-w-7xl mx-auto ${styles.paddingX} pt-[140px] lg:pt-[170px] flex flex-row items-start gap-5 pointer-events-none`}
       >
         <div className='hidden sm:flex flex-col justify-center items-center mt-3'>
           <div className='w-3.5 h-3.5 rounded-full bg-gold' />
@@ -22,8 +22,8 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className='lg:max-w-[540px] pointer-events-auto'
         >
-          <div className='inline-flex items-center gap-2 text-[13px] text-cream bg-white/[0.04] border border-white/10 rounded-full pl-2 pr-4 py-1.5 mb-7'>
-            <span className='flex text-gold'>
+          <div className='inline-flex items-center gap-2 text-[13px] text-cream bg-ink/[0.04] border border-ink/10 rounded-full pl-2 pr-4 py-1.5 mb-7'>
+            <span className='flex text-lupin'>
               {[...Array(5)].map((_, i) => (
                 <Icon key={i} name='star' filled className='w-3.5 h-3.5' strokeWidth={0} />
               ))}
@@ -45,7 +45,7 @@ const Hero = () => {
           <div className='mt-9 flex flex-wrap gap-3'>
             <a
               href='#products'
-              className='inline-flex items-center gap-2 bg-gold text-primary font-semibold px-7 py-3.5 rounded-full hover:bg-cream transition-colors'
+              className='inline-flex items-center gap-2 bg-lupin text-ink font-semibold px-7 py-3.5 rounded-full hover:bg-ink hover:text-primary transition-colors'
             >
               Explore products <Icon name='arrow' className='w-4 h-4' strokeWidth={2.25} />
             </a>
@@ -57,7 +57,7 @@ const Hero = () => {
             </a>
           </div>
 
-          <dl className='mt-12 hidden xs:grid grid-cols-3 gap-6 max-w-[480px] border-t border-white/10 pt-6 [@media(max-height:780px)]:hidden'>
+          <dl className='mt-12 hidden xs:grid grid-cols-3 gap-6 max-w-[480px] border-t border-ink/10 pt-6 [@media(max-height:780px)]:hidden'>
             {heroStats.map((s) => (
               <div key={s.label}>
                 <dt className='sr-only'>{s.label}</dt>
@@ -75,11 +75,11 @@ const Hero = () => {
       </div>
 
       {/* Claims strip */}
-      <div className='absolute bottom-0 inset-x-0 bg-black-200/80 backdrop-blur border-y border-gold/20 py-3.5 overflow-hidden'>
+      <div className='absolute bottom-0 inset-x-0 bg-ink py-3.5 overflow-hidden'>
         <div className='marquee'>
           {[...claims, ...claims, ...claims, ...claims].map((c, i) => (
-            <span key={i} className='flex items-center text-[12px] font-semibold uppercase tracking-[0.18em] text-cream whitespace-nowrap'>
-              <span className='w-1.5 h-1.5 rounded-full bg-gold mx-7' />
+            <span key={i} className='flex items-center text-[12px] font-semibold uppercase tracking-[0.18em] text-primary whitespace-nowrap'>
+              <span className='w-1.5 h-1.5 rounded-full bg-lupin mx-7' />
               {c}
             </span>
           ))}

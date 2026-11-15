@@ -7,7 +7,7 @@ import { comparison } from "../constants";
 import { fadeIn, textVariant } from "../utils/motion";
 
 const Bar = ({ value, max, color, delay }) => (
-  <div className='h-2.5 w-full rounded-full bg-white/[0.06] overflow-hidden'>
+  <div className='h-2.5 w-full rounded-full bg-ink/[0.06] overflow-hidden'>
     <motion.div
       initial={{ width: 0 }}
       whileInView={{ width: `${Math.max((value / max) * 100, value === 0 ? 1.5 : 0)}%` }}
@@ -30,11 +30,11 @@ const Row = ({ row, index }) => (
 
     <div className='mt-5 grid grid-cols-[92px_1fr_76px] sm:grid-cols-[112px_1fr_90px] items-center gap-x-4 gap-y-3'>
       <span className='text-cream text-[13px] font-semibold'>NUTRUMMY</span>
-      <Bar value={row.us} max={row.max} color='#F5B82E' delay={0.1} />
+      <Bar value={row.us} max={row.max} color='#8A5100' delay={0.1} />
       <span className='font-display text-cream font-semibold text-[20px] text-right'>{row.usLabel}</span>
 
       <span className='text-secondary text-[13px]'>Typical cereal</span>
-      <Bar value={row.them} max={row.max} color='#8a7868' delay={0.25} />
+      <Bar value={row.them} max={row.max} color='#8892A6' delay={0.25} />
       <span className='text-secondary text-[14px] text-right'>{row.themLabel}</span>
     </div>
   </motion.div>

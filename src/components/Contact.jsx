@@ -13,7 +13,7 @@ const hasEmailJs =
   env.VITE_APP_EMAILJS_SERVICE_ID && env.VITE_APP_EMAILJS_TEMPLATE_ID && env.VITE_APP_EMAILJS_PUBLIC_KEY;
 
 const inputClass =
-  "bg-tertiary py-3.5 px-5 placeholder:text-muted text-cream rounded-xl outline-none border border-white/5 focus:border-gold/60 font-medium transition-colors";
+  "bg-tertiary py-3.5 px-5 placeholder:text-muted text-cream rounded-xl outline-none border border-ink/5 focus:border-gold/60 font-medium transition-colors";
 
 const emptyForm = { name: "", email: "", topic: enquiryTypes[0], message: "" };
 
@@ -76,7 +76,7 @@ const Contact = () => {
     <div className='xl:mt-12 flex xl:flex-row flex-col-reverse gap-10 overflow-hidden'>
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className='flex-[0.8] bg-black-100 p-8 sm:p-10 rounded-3xl border border-white/5'
+        className='flex-[0.8] bg-black-100 p-8 sm:p-10 rounded-3xl border border-ink/5'
       >
         <p className={styles.sectionSubText}>Connect with NUTRUMMY</p>
         <h3 className={styles.sectionHeadText}>
@@ -121,7 +121,7 @@ const Contact = () => {
             <button
               type='submit'
               disabled={status.state === "loading"}
-              className='bg-gold text-primary py-3.5 px-8 rounded-full font-semibold hover:bg-cream transition-colors disabled:opacity-60'
+              className='bg-lupin text-ink py-3.5 px-8 rounded-full font-semibold hover:bg-ink hover:text-primary transition-colors disabled:opacity-60'
             >
               {status.state === "loading" ? "Sending…" : "Send message"}
             </button>
@@ -133,7 +133,7 @@ const Contact = () => {
           </div>
         </form>
 
-        <div className='mt-10 pt-8 border-t border-white/10 grid sm:grid-cols-2 gap-5 text-[14px]'>
+        <div className='mt-10 pt-8 border-t border-ink/10 grid sm:grid-cols-2 gap-5 text-[14px]'>
           <div>
             <p className='text-gold text-[11px] uppercase tracking-[0.2em] font-semibold'>Headquarters</p>
             <p className='text-cream mt-2'>{contactInfo.company}</p>

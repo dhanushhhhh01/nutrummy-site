@@ -10,6 +10,10 @@ import Recipes from "./Recipes";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import Partners from "./Partners";
+import Values from "./Values";
+import Newsletter from "./Newsletter";
+import CartDrawer from "./CartDrawer";
+import Chatbot from "./Chatbot";
 import CanvasLoader from "./Loader";
 
 export {
@@ -24,6 +28,10 @@ export {
   Contact,
   Footer,
   Partners,
+  Values,
+  Newsletter,
+  CartDrawer,
+  Chatbot,
   CanvasLoader,
   BowlCanvas,
   BallCanvas,

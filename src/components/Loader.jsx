@@ -9,7 +9,7 @@ const CanvasLoader = () => {
       style={{ display: "flex", justifyContent: "center", alignItems: "center", flexDirection: "column" }}
     >
       <span className='canvas-loader'></span>
-      <p style={{ fontSize: 13, color: "#F5B82E", fontWeight: 700, marginTop: 16 }}>{progress.toFixed(0)}%</p>
+      <p style={{ fontSize: 13, color: "#8A5100", fontWeight: 700, marginTop: 16 }}>{progress.toFixed(0)}%</p>
     </Html>
   );
 };

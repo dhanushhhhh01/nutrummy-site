@@ -10,7 +10,7 @@ import Icon from "./Icon";
 const RecipeCard = ({ index, title, time, protein, text, highlights }) => (
   <motion.div
     variants={fadeIn("", "spring", index * 0.2, 0.75)}
-    className='bg-black-200 p-7 rounded-2xl border border-white/[0.07] flex flex-col h-full'
+    className='bg-black-200 p-7 rounded-2xl border border-ink/[0.07] flex flex-col h-full'
   >
     <div className='flex items-center justify-between text-[13px]'>
       <span className='inline-flex items-center gap-1.5 text-secondary'>
@@ -24,7 +24,7 @@ const RecipeCard = ({ index, title, time, protein, text, highlights }) => (
     <p className='mt-3 text-secondary text-[14px] leading-[22px] flex-1'>{text}</p>
     <div className='mt-5 flex flex-wrap gap-1.5'>
       {highlights.map((h) => (
-        <span key={h} className='text-[12px] text-cream bg-white/[0.05] border border-white/10 rounded-md px-2 py-0.5'>
+        <span key={h} className='text-[12px] text-cream bg-ink/[0.05] border border-ink/10 rounded-md px-2 py-0.5'>
           {h}
         </span>
       ))}

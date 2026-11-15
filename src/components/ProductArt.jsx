@@ -19,21 +19,21 @@ const ProductArt = ({ short, protein, body, accent, id }) => (
     {[...Array(12)].map((_, i) => (
       <rect key={i} x={34 + i * 11.5} y='10' width='2' height='18' fill='#d9940f' />
     ))}
-    <text x='100' y='52' textAnchor='middle' fill='#F5B82E' fontFamily='Fraunces, Georgia, serif' fontWeight='700' fontSize='15' letterSpacing='1'>
+    <text x='100' y='52' textAnchor='middle' fill='#F5B82E' fontFamily='Plus Jakarta Sans, system-ui, sans-serif' fontWeight='700' fontSize='15' letterSpacing='1'>
       NUTRUMMY
     </text>
     <line x1='70' y1='60' x2='130' y2='60' stroke={accent} strokeOpacity='0.4' />
-    <text x='100' y='100' textAnchor='middle' fill='#FFF4E0' fontFamily='Fraunces, Georgia, serif' fontWeight='700' fontSize='30'>
+    <text x='100' y='100' textAnchor='middle' fill='#FFF4E0' fontFamily='Plus Jakarta Sans, system-ui, sans-serif' fontWeight='700' fontSize='30'>
       {short[0]}
     </text>
-    <text x='100' y='128' textAnchor='middle' fill={accent} fontFamily='Poppins, sans-serif' fontWeight='700' fontSize='17' letterSpacing='2'>
+    <text x='100' y='128' textAnchor='middle' fill={accent} fontFamily='Plus Jakarta Sans, system-ui, sans-serif' fontWeight='700' fontSize='17' letterSpacing='2'>
       {short[1]}
     </text>
     <circle cx='100' cy='176' r='26' fill='none' stroke={accent} strokeOpacity='0.55' strokeWidth='1.5' />
-    <text x='100' y='178' textAnchor='middle' fill='#FFF4E0' fontFamily='Fraunces, Georgia, serif' fontWeight='700' fontSize='17'>
+    <text x='100' y='178' textAnchor='middle' fill='#FFF4E0' fontFamily='Plus Jakarta Sans, system-ui, sans-serif' fontWeight='700' fontSize='17'>
       {protein}
     </text>
-    <text x='100' y='191' textAnchor='middle' fill={accent} fontFamily='Poppins, sans-serif' fontWeight='600' fontSize='7' letterSpacing='1.5'>
+    <text x='100' y='191' textAnchor='middle' fill={accent} fontFamily='Plus Jakarta Sans, system-ui, sans-serif' fontWeight='600' fontSize='7' letterSpacing='1.5'>
       PROTEIN
     </text>
     <path d='M30 22h140l8 196a10 10 0 0 1-10 10H32a10 10 0 0 1-10-10z' fill={`url(#s-${id})`} />

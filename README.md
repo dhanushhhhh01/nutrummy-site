@@ -33,6 +33,8 @@ npm run preview       # serve dist/ locally
 npm run build:pages   # build for GitHub Pages (/nutrummy-site/) in dist-pages/
 ```
 
+Pushing to `main` deploys automatically: `.github/workflows/deploy-pages.yml` builds the site and publishes it to GitHub Pages (progress shows in the repo's **Actions** tab).
+
 ## Where things live
 
 | What | Where |

@@ -16,7 +16,7 @@ const BlogCards = ({ exclude }) => (
           className='group bg-tertiary rounded-2xl border border-ink/10 shadow-card overflow-hidden flex flex-col hover:border-gold/50 transition-colors'
         >
           <div className={`h-40 flex items-end p-6 ${i % 2 ? "bg-ink" : "bg-lupin"}`}>
-            <p className={`font-display font-extrabold text-[30px] leading-none tracking-[-0.02em] ${i % 2 ? "text-[#F5F1E8]" : "text-ink"}`}>
+            <p className={`font-display font-extrabold text-[30px] leading-none tracking-[-0.02em] ${i % 2 ? "text-[#FFF3E6]" : "text-ink"}`}>
               {b.title}
             </p>
           </div>

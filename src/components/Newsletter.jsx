@@ -48,7 +48,7 @@ const Newsletter = () => {
             />
             <button
               type='submit'
-              className='bg-ink text-[#F5F1E8] font-bold uppercase tracking-wider text-[13px] px-7 py-3.5 rounded-full hover:bg-[#FFFFFF] hover:text-ink transition-colors'
+              className='bg-ink text-[#FFF3E6] font-bold uppercase tracking-wider text-[13px] px-7 py-3.5 rounded-full hover:bg-[#FFFFFF] hover:text-ink transition-colors'
             >
               Join
             </button>

@@ -187,12 +187,12 @@ const Chatbot = () => {
             aria-label='NutriBot chat'
             className='fixed z-40 bottom-24 right-4 sm:right-6 w-[calc(100vw-2rem)] max-w-[380px] h-[min(560px,calc(100svh-8rem))] bg-tertiary rounded-2xl shadow-2xl border border-ink/10 flex flex-col overflow-hidden'
           >
-            <header className='bg-ink text-[#F5F1E8] px-5 py-4 flex items-center justify-between'>
+            <header className='bg-ink text-[#FFF3E6] px-5 py-4 flex items-center justify-between'>
               <div className='flex items-center gap-3'>
                 <img src={`${import.meta.env.BASE_URL}logo.svg`} alt='' className='w-9 h-9' />
                 <div>
                   <p className='font-bold text-[15px] leading-tight'>NutriBot</p>
-                  <p className='text-[12px] text-[#C9CFDB]'>Instant answers about NUTRUMMY</p>
+                  <p className='text-[12px] text-[#E3D3E8]'>Instant answers about NUTRUMMY</p>
                 </div>
               </div>
               <button type='button' onClick={() => setOpen(false)} aria-label='Close chat' className='p-1.5 hover:text-lupin'>
@@ -285,9 +285,9 @@ const Chatbot = () => {
         onClick={() => setOpen((o) => !o)}
         aria-label={open ? "Close NutriBot" : "Open NutriBot chat"}
         aria-expanded={open}
-        className='fixed z-40 bottom-5 right-4 sm:right-6 h-14 w-14 sm:w-auto justify-center sm:justify-start sm:pl-3 sm:pr-5 rounded-full bg-ink text-[#F5F1E8] shadow-2xl flex items-center gap-2.5 hover:bg-lupin hover:text-ink transition-colors'
+        className='fixed z-40 bottom-5 right-4 sm:right-6 h-14 w-14 sm:w-auto justify-center sm:justify-start sm:pl-3 sm:pr-5 rounded-full bg-ink text-[#FFF3E6] shadow-2xl flex items-center gap-2.5 hover:bg-lupin hover:text-ink transition-colors'
       >
-        <span className='w-9 h-9 rounded-full bg-[#F5F1E8]/10 flex items-center justify-center'>
+        <span className='w-9 h-9 rounded-full bg-[#FFF3E6]/10 flex items-center justify-center'>
           <Icon name={open ? "close" : "chat"} className='w-5 h-5' />
         </span>
         <span className='hidden sm:inline text-[14px] font-bold'>{open ? "Close" : "Ask NutriBot"}</span>

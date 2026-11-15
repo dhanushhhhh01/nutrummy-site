@@ -11,7 +11,7 @@ import Icon from "./Icon";
 // it invites customers to share theirs instead of showing placeholder testimonials.
 const ReviewCard = ({ index, name, city, product, text }) => (
   <motion.figure variants={fadeIn("up", "spring", index * 0.15, 0.75)} className={`${styles.card} p-7 flex flex-col`}>
-    <div className='flex text-lupin' aria-hidden>
+    <div className='flex text-mango' aria-hidden>
       {[...Array(5)].map((_, i) => (
         <Icon key={i} name='star' filled strokeWidth={0} className='w-4 h-4' />
       ))}

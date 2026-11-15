@@ -62,7 +62,7 @@ const Tech = () => {
           transition={{ duration: 0.25 }}
           className='mt-12 grid md:grid-cols-[0.8fr_1.2fr] rounded-3xl overflow-hidden border border-ink/10 shadow-card'
         >
-          <div className='bg-ink text-[#F5F1E8] p-8 sm:p-10 flex flex-col justify-center'>
+          <div className='bg-ink text-[#FFF3E6] p-8 sm:p-10 flex flex-col justify-center'>
             <span className='self-start text-[11px] font-bold uppercase tracking-[0.18em] bg-lupin text-ink px-3 py-1 rounded-full'>
               {ing.badge}
             </span>

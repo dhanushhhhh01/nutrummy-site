@@ -112,8 +112,8 @@ const Navbar = () => {
   return (
     <>
       <header className='fixed top-0 inset-x-0 z-30'>
-        <p className='bg-ink text-[#F5F1E8] text-center text-[12px] sm:text-[13px] font-semibold tracking-wide py-2 px-4'>
-          Free shipping over ₹{FREE_SHIPPING_AT} · Use code <span className='text-lupin font-bold'>SEVEN15</span> for 15% off
+        <p className='bg-ink text-[#FFF3E6] text-center text-[12px] sm:text-[13px] font-semibold tracking-wide py-2 px-4'>
+          Free shipping over ₹{FREE_SHIPPING_AT} · Use code <span className='text-mango font-bold'>SEVEN15</span> for 15% off
         </p>
         <nav
           className={`${styles.paddingX} py-3 transition-colors duration-300 ${

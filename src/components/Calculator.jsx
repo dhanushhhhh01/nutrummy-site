@@ -108,7 +108,7 @@ const Calculator = () => {
               max={130}
               value={weight}
               onChange={(e) => setWeight(Number(e.target.value))}
-              className='mt-4 w-full accent-[#F2A900]'
+              className='mt-4 w-full accent-[#FF6B1A]'
             />
             <div className='flex justify-between text-[12px] text-secondary mt-1'>
               <span>35 kg</span>
@@ -117,16 +117,16 @@ const Calculator = () => {
           </div>
         </div>
 
-        <div className='bg-ink text-[#F5F1E8] rounded-2xl p-6 sm:p-8 flex flex-col' aria-live='polite'>
+        <div className='bg-ink text-[#FFF3E6] rounded-2xl p-6 sm:p-8 flex flex-col' aria-live='polite'>
           <p className='text-[12px] font-bold uppercase tracking-[0.2em] text-lupin'>Your daily protein</p>
           <p className='mt-2 font-display font-extrabold text-[64px] leading-none tracking-[-0.03em]'>
             {result.daily}
-            <span className='text-[24px] text-[#C9CFDB]'> g/day</span>
+            <span className='text-[24px] text-[#E3D3E8]'> g/day</span>
           </p>
-          <div className='mt-6 rounded-xl bg-[#F5F1E8]/[0.07] p-4'>
-            <p className='text-[13px] text-[#C9CFDB]'>Your NUTRUMMY pick</p>
+          <div className='mt-6 rounded-xl bg-[#FFF3E6]/[0.07] p-4'>
+            <p className='text-[13px] text-[#E3D3E8]'>Your NUTRUMMY pick</p>
             <p className='font-bold text-[17px] mt-0.5'>{result.product.name}</p>
-            <p className='text-[14px] text-[#C9CFDB] mt-1'>
+            <p className='text-[14px] text-[#E3D3E8] mt-1'>
               One {SERVING_G}g bowl gives <span className='text-lupin font-bold'>{result.perServing}g protein</span>, about{" "}
               {result.share}% of your day.
             </p>
@@ -137,19 +137,19 @@ const Calculator = () => {
                 add(result.product.id, result.product.packs[0].id);
                 setAdded(true);
               }}
-              className='mt-4 inline-flex items-center gap-1.5 bg-lupin text-ink text-[13px] font-bold px-4 py-2.5 rounded-full hover:bg-[#F5F1E8]'
+              className='mt-4 inline-flex items-center gap-1.5 bg-lupin text-ink text-[13px] font-bold px-4 py-2.5 rounded-full hover:bg-[#FFF3E6]'
             >
               {added ? "View cart" : `Add to cart · ${formatINR(result.product.packs[0].price)}`}
               <Icon name='arrow' className='w-4 h-4' strokeWidth={2.25} />
             </button>
           </div>
           {result.recipe && (
-            <p className='mt-4 text-[14px] text-[#C9CFDB]'>
-              Try: <span className='text-[#F5F1E8] font-semibold'>{result.recipe.title}</span> ({result.recipe.time},{" "}
+            <p className='mt-4 text-[14px] text-[#E3D3E8]'>
+              Try: <span className='text-[#FFF3E6] font-semibold'>{result.recipe.title}</span> ({result.recipe.time},{" "}
               {result.recipe.protein} protein)
             </p>
           )}
-          <p className='mt-auto pt-6 text-[11px] text-[#C9CFDB] leading-[17px]'>
+          <p className='mt-auto pt-6 text-[11px] text-[#E3D3E8] leading-[17px]'>
             General guidance based on common protein ranges, not medical advice. Pregnant or breastfeeding, managing
             a health condition, or under 18? Check with a doctor or dietitian.
           </p>

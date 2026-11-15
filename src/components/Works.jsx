@@ -38,7 +38,7 @@ const ProductCard = ({ product }) => {
               animate={{ rotateY: 0, opacity: 1 }}
               exit={{ rotateY: 90, opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className='absolute inset-0 bg-ink text-[#F5F1E8] p-4 text-[12.5px] overflow-y-auto'
+              className='absolute inset-0 bg-ink text-[#FFF3E6] p-4 text-[12.5px] overflow-y-auto'
               aria-label={`${name} nutrition panel`}
             >
               <p className='text-[11px] font-bold uppercase tracking-[0.18em] text-lupin'>Nutrition panel</p>
@@ -49,14 +49,14 @@ const ProductCard = ({ product }) => {
                 ["Plant powered", n.plantPowered],
                 ["Flavour", n.flavour],
               ].map(([k, v]) => (
-                <div key={k} className='flex justify-between gap-3 py-1.5 border-b border-[#F5F1E8]/15'>
-                  <dt className='text-[#C9CFDB]'>{k}</dt>
+                <div key={k} className='flex justify-between gap-3 py-1.5 border-b border-[#FFF3E6]/15'>
+                  <dt className='text-[#E3D3E8]'>{k}</dt>
                   <dd className='font-semibold text-right'>{v}</dd>
                 </div>
               ))}
-              <dt className='mt-2 text-[#C9CFDB]'>Key ingredients</dt>
+              <dt className='mt-2 text-[#E3D3E8]'>Key ingredients</dt>
               <dd className='font-medium'>{n.keyIngredients}</dd>
-              <dt className='mt-2 text-[#C9CFDB]'>How to serve</dt>
+              <dt className='mt-2 text-[#E3D3E8]'>How to serve</dt>
               <dd className='font-medium'>{n.howToServe}</dd>
             </motion.dl>
           ) : (
@@ -67,7 +67,7 @@ const ProductCard = ({ product }) => {
               exit={{ rotateY: -90, opacity: 0 }}
               transition={{ duration: 0.25 }}
               className='absolute inset-0 flex items-center justify-center'
-              style={{ background: "radial-gradient(circle at 50% 42%, #FFFFFF 0%, #EFE7D7 80%)" }}
+              style={{ background: "radial-gradient(circle at 50% 42%, #FFFFFF 0%, #FFE4CC 80%)" }}
             >
               <ProductImage product={product} />
               <span className='absolute top-3 left-3 bg-cream text-primary text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full'>
@@ -96,7 +96,7 @@ const ProductCard = ({ product }) => {
             From <span className='font-bold'>{formatINR(fromPrice)}</span>
           </p>
           <p className='flex items-center gap-1 text-secondary' aria-label={`Rated ${product.rating} out of 5 from ${product.reviewCount} reviews`}>
-            <Icon name='star' filled strokeWidth={0} className='w-3.5 h-3.5 text-lupin' />
+            <Icon name='star' filled strokeWidth={0} className='w-3.5 h-3.5 text-mango' />
             <span className='font-semibold text-cream'>{product.rating}</span> ({product.reviewCount})
           </p>
         </div>

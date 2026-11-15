@@ -24,7 +24,7 @@ const Hero = () => {
           className='min-w-0 flex-1 lg:flex-none lg:max-w-[540px] pointer-events-auto'
         >
           <div className='inline-flex items-center gap-2 text-[13px] text-cream bg-ink/[0.04] border border-ink/10 rounded-full pl-2 pr-4 py-1.5 mb-7'>
-            <span className='flex text-lupin'>
+            <span className='flex text-mango'>
               {[...Array(5)].map((_, i) => (
                 <Icon key={i} name='star' filled className='w-3.5 h-3.5' strokeWidth={0} />
               ))}
@@ -72,7 +72,7 @@ const Hero = () => {
         <div className='marquee'>
           {[...claims, ...claims, ...claims, ...claims].map((c, i) => (
             <span key={i} className='flex items-center text-[12px] font-semibold uppercase tracking-[0.18em] text-primary whitespace-nowrap'>
-              <span className='w-1.5 h-1.5 rounded-full bg-lupin mx-7' />
+              <span className='w-1.5 h-1.5 rounded-full bg-mango mx-7' />
               {c}
             </span>
           ))}

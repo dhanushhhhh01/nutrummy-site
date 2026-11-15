@@ -5,8 +5,8 @@
       <stop offset="1" stop-color="#E09A12"/>
     </linearGradient>
   </defs>
-  <circle cx="32" cy="32" r="30" fill="#003B4A"/>
+  <circle cx="32" cy="32" r="30" fill="#3D1A4D"/>
   <ellipse cx="32" cy="34" rx="15" ry="19" transform="rotate(-28 32 34)" fill="url(#g)"/>
-  <path d="M25 22c5 6 9 14 10 24" stroke="#003B4A" stroke-width="3" fill="none" stroke-linecap="round"/>
+  <path d="M25 22c5 6 9 14 10 24" stroke="#3D1A4D" stroke-width="3" fill="none" stroke-linecap="round"/>
   <path d="M38 12c4-4 10-4 12 0-4 3-9 3-12 0z" fill="#9BC53D"/>
 </svg>

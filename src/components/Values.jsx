@@ -15,7 +15,7 @@ const blocks = [
     points: ["Zero maida", "No refined sugar", "No synthetic isolates"],
     cta: { label: "Shop real food", href: "#products" },
     stat: { value: "100%", label: "real food" },
-    tone: "bg-ink text-[#F5F1E8]",
+    tone: "bg-ink text-[#FFF3E6]",
   },
   {
     eyebrow: "NUTRUMMY is",

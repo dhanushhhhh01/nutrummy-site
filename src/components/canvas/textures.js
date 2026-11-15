@@ -147,7 +147,7 @@ export const drawElement = (canvas, symbol, stat) => {
   canvas.height = 256;
   const ctx = canvas.getContext("2d");
   ctx.clearRect(0, 0, 256, 256);
-  ctx.fillStyle = "rgba(0,59,74,0.94)";
+  ctx.fillStyle = "rgba(61,26,77,0.94)";
   ctx.beginPath();
   ctx.roundRect ? ctx.roundRect(28, 28, 200, 200, 26) : ctx.rect(28, 28, 200, 200);
   ctx.fill();

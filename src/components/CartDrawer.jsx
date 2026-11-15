@@ -149,7 +149,7 @@ const CartDrawer = () => {
                   Your email app has opened with the order filled in. Send it, and we'll confirm
                   payment and delivery within one working day.
                 </p>
-                <button type='button' onClick={close} className='mt-6 bg-lupin text-onaccent font-semibold px-6 py-3 rounded-full hover:bg-ink hover:text-primary'>
+                <button type='button' onClick={close} className='mt-6 bg-lupin text-onaccent border-2 border-ink shadow-pop-sm pop-btn font-semibold px-6 py-3 rounded-full hover:bg-ink hover:text-primary'>
                   Continue browsing
                 </button>
               </div>
@@ -160,7 +160,7 @@ const CartDrawer = () => {
                 <Icon name='cart' className='w-12 h-12 text-secondary' />
                 <p className='mt-4 text-cream font-semibold'>Your cart is empty</p>
                 <p className='mt-1 text-secondary text-[14px]'>Add a high-protein breakfast to get started.</p>
-                <Link to={{ pathname: "/", hash: "#products" }} onClick={close} className='mt-6 bg-lupin text-onaccent font-semibold px-6 py-3 rounded-full hover:bg-ink hover:text-primary'>
+                <Link to={{ pathname: "/", hash: "#products" }} onClick={close} className='mt-6 bg-lupin text-onaccent border-2 border-ink shadow-pop-sm pop-btn font-semibold px-6 py-3 rounded-full hover:bg-ink hover:text-primary'>
                   Browse products
                 </Link>
               </div>
@@ -329,7 +329,7 @@ const CartDrawer = () => {
                   <button
                     type='button'
                     onClick={() => setStep("details")}
-                    className='mt-4 w-full bg-lupin text-onaccent font-semibold py-3.5 rounded-full hover:bg-ink hover:text-primary transition-colors'
+                    className='mt-4 w-full bg-lupin text-onaccent border-2 border-ink shadow-pop-sm pop-btn font-semibold py-3.5 rounded-full hover:bg-ink hover:text-primary transition-colors'
                   >
                     Checkout · {formatINR(total)}
                   </button>
@@ -345,7 +345,7 @@ const CartDrawer = () => {
                     <button
                       type='submit'
                       form='checkout-form'
-                      className='flex-1 bg-lupin text-onaccent font-semibold py-3.5 rounded-full hover:bg-ink hover:text-primary transition-colors'
+                      className='flex-1 bg-lupin text-onaccent border-2 border-ink shadow-pop-sm pop-btn font-semibold py-3.5 rounded-full hover:bg-ink hover:text-primary transition-colors'
                     >
                       Place order
                     </button>

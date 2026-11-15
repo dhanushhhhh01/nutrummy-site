@@ -80,7 +80,7 @@ const Contact = () => {
       >
         <p className={styles.sectionSubText}>Connect with NUTRUMMY</p>
         <h3 className={styles.sectionHeadText}>
-          Let's <span className='text-gold'>talk.</span>
+          Let's <span className='marker'>talk.</span>
         </h3>
         <p className='mt-3 text-secondary text-[15px] leading-[26px]'>
           Questions, feedback, bulk orders or just want to say hi? We would love to hear from you.
@@ -131,7 +131,7 @@ const Contact = () => {
             <button
               type='submit'
               disabled={status.state === "loading"}
-              className='bg-lupin text-onaccent py-3.5 px-8 rounded-full font-semibold hover:bg-ink hover:text-primary transition-colors disabled:opacity-60'
+              className='bg-lupin text-onaccent border-2 border-ink shadow-pop-sm pop-btn py-3.5 px-8 rounded-full font-semibold hover:bg-ink hover:text-primary transition-colors disabled:opacity-60'
             >
               {status.state === "loading" ? "Sending…" : "Send message"}
             </button>

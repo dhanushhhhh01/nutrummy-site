@@ -28,8 +28,12 @@ const ProductCard = ({ product }) => {
 
   return (
     <div id={`product-${id}`} className='h-full scroll-mt-36 rounded-2xl target:ring-4 target:ring-lupin/60'>
-    <Tilt options={{ max: 6, scale: 1, speed: 450 }} className={`${styles.card} p-4 h-full flex flex-col`}>
-      <div className='relative w-full h-[230px] rounded-xl overflow-hidden' style={{ perspective: 1000 }}>
+    <Tilt
+      options={{ max: 6, scale: 1, speed: 450 }}
+      className='rounded-3xl border-2 border-ink shadow-pop p-4 h-full flex flex-col'
+      style={{ backgroundColor: product.theme.soft }}
+    >
+      <div className='relative w-full h-[230px] rounded-2xl overflow-hidden border-2 border-ink' style={{ perspective: 1000 }}>
         <AnimatePresence initial={false} mode='wait'>
           {showPanel ? (
             <motion.dl
@@ -67,7 +71,7 @@ const ProductCard = ({ product }) => {
               exit={{ rotateY: -90, opacity: 0 }}
               transition={{ duration: 0.25 }}
               className='absolute inset-0 flex items-center justify-center'
-              style={{ background: "radial-gradient(circle at 50% 42%, #FFFFFF 0%, #EFE7D7 80%)" }}
+              style={{ background: `radial-gradient(circle at 50% 42%, #FFFFFF 0%, ${product.theme.solid} 140%)` }}
             >
               <ProductImage product={product} />
               <span className='absolute top-3 left-3 bg-cream text-primary text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full'>
@@ -81,7 +85,7 @@ const ProductCard = ({ product }) => {
           onClick={() => setShowPanel((s) => !s)}
           aria-pressed={showPanel}
           className={`absolute bottom-3 right-3 z-10 text-[11px] font-bold px-2.5 py-1.5 rounded-full border transition-colors ${
-            showPanel ? "bg-lupin text-onaccent border-lupin" : "bg-tertiary/90 text-cream border-ink/15 hover:border-ink/40"
+            showPanel ? "bg-lupin text-onaccent border-2 border-ink shadow-pop-sm pop-btn border-lupin" : "bg-tertiary/90 text-cream border-ink/15 hover:border-ink/40"
           }`}
         >
           {showPanel ? "Show pack ↺" : "Nutrition panel ↺"}
@@ -155,7 +159,7 @@ const ProductCard = ({ product }) => {
               setJustAdded(true);
             }}
             aria-label={`Add ${name}, ${pack.label}, to cart`}
-            className='inline-flex items-center gap-1.5 bg-lupin text-onaccent text-[13px] font-bold uppercase tracking-wide px-4 py-2.5 rounded-full hover:bg-ink hover:text-primary transition-colors'
+            className='inline-flex items-center gap-1.5 bg-lupin text-onaccent border-2 border-ink shadow-pop-sm pop-btn text-[13px] font-bold uppercase tracking-wide px-4 py-2.5 rounded-full hover:bg-ink hover:text-primary transition-colors'
           >
             <Icon name='cart' className='w-4 h-4' strokeWidth={2} /> Add to cart
           </button>
@@ -174,10 +178,10 @@ const Works = () => {
     <>
       <motion.div variants={textVariant()} className='text-center'>
         <p className={styles.sectionSubText}>Our high-protein pantry</p>
-        <h2 className={`${styles.sectionHeadText} mt-3`}>
-          Welcome back to the <span className='text-gold'>breakfast table.</span>
+        <h2 className={`${styles.sectionHeadText} mt-3 !text-onaccent`}>
+          Welcome back to the <span className='marker'>breakfast table.</span>
         </h2>
-        <p className={`${styles.body} mt-4 max-w-2xl mx-auto`}>
+        <p className={`${styles.body} mt-4 max-w-2xl mx-auto !text-onaccent font-medium`}>
           Every recipe is made with Sweet Lupin: up to 35g of protein per 100g, zero maida and nothing
           artificial.
         </p>

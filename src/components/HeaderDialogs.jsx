@@ -120,7 +120,7 @@ export const SearchDialog = ({ open, onClose }) => {
                 onClose();
                 openCart();
               }}
-              className='text-[12px] font-bold px-3 py-1.5 rounded-full bg-lupin text-onaccent shrink-0 hover:bg-ink hover:text-primary'
+              className='text-[12px] font-bold px-3 py-1.5 rounded-full bg-lupin text-onaccent border-2 border-ink shadow-pop-sm pop-btn shrink-0 hover:bg-ink hover:text-primary'
             >
               Add
             </button>
@@ -158,7 +158,7 @@ export const LoginDialog = ({ open, onClose }) => (
         You can order without an account. Your cart is saved on this device, and we confirm every order by
         email.
       </p>
-      <button type='button' onClick={onClose} className='mt-5 bg-lupin text-onaccent font-semibold px-6 py-3 rounded-full hover:bg-ink hover:text-primary'>
+      <button type='button' onClick={onClose} className='mt-5 bg-lupin text-onaccent border-2 border-ink shadow-pop-sm pop-btn font-semibold px-6 py-3 rounded-full hover:bg-ink hover:text-primary'>
         Continue shopping
       </button>
     </div>
@@ -200,7 +200,7 @@ export const TrackDialog = ({ open, onClose }) => {
             {err}
           </p>
         )}
-        <button type='submit' className='w-full bg-lupin text-onaccent font-semibold py-3 rounded-full hover:bg-ink hover:text-primary'>
+        <button type='submit' className='w-full bg-lupin text-onaccent border-2 border-ink shadow-pop-sm pop-btn font-semibold py-3 rounded-full hover:bg-ink hover:text-primary'>
           Request status
         </button>
       </form>

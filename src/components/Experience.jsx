@@ -10,19 +10,21 @@ import { SectionWrapper } from "../hoc";
 import { textVariant } from "../utils/motion";
 import Icon from "./Icon";
 
-const MomentCard = ({ moment }) => (
+const MOMENT_COLOURS = ["#FFC93C", "#6FB8FF", "#5CC46A", "#B9A3FF"];
+
+const MomentCard = ({ moment, index }) => (
   <VerticalTimelineElement
     contentStyle={{
       background: "#FFFFFF",
       color: "#003B4A",
-      boxShadow: "0 12px 32px -12px rgba(0,59,74,0.14)",
-      border: "1px solid rgba(0,59,74,0.10)",
+      boxShadow: "6px 6px 0 0 #003B4A",
+      border: "2px solid #003B4A",
       borderRadius: 16,
       padding: "24px 26px",
     }}
-    contentArrowStyle={{ borderRight: "7px solid #FFFFFF" }}
+    contentArrowStyle={{ borderRight: "9px solid #003B4A" }}
     date={moment.time}
-    iconStyle={{ background: "#FFFFFF", color: "#8A5100", boxShadow: "0 0 0 2px #8A5100, 0 0 0 7px #F5F1E8" }}
+    iconStyle={{ background: MOMENT_COLOURS[index % 4], color: "#003B4A", boxShadow: "0 0 0 2px #003B4A, 3px 3px 0 2px #003B4A" }}
     icon={
       <div className='flex justify-center items-center w-full h-full'>
         <Icon name={moment.icon} className='w-[45%] h-[45%]' />
@@ -49,14 +51,14 @@ const Experience = () => (
     <motion.div variants={textVariant()} className='text-center'>
       <p className={styles.sectionSubText}>From sunrise to late night</p>
       <h2 className={`${styles.sectionHeadText} mt-3`}>
-        Built for <span className='text-gold'>every part</span> of the day.
+        Built for <span className='marker'>every part</span> of the day.
       </h2>
     </motion.div>
 
     <div className='mt-16 flex flex-col'>
       <VerticalTimeline lineColor='#8A5100'>
-        {moments.map((m) => (
-          <MomentCard key={m.time} moment={m} />
+        {moments.map((m, i) => (
+          <MomentCard key={m.time} moment={m} index={i} />
         ))}
       </VerticalTimeline>
     </div>

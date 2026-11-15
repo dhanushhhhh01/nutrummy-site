@@ -24,7 +24,7 @@ const CartButton = () => {
           initial={{ scale: 0.4 }}
           animate={{ scale: 1 }}
           transition={{ type: "spring", stiffness: 500, damping: 18 }}
-          className='absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 rounded-full bg-lupin text-onaccent text-[10px] font-bold flex items-center justify-center'
+          className='absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 rounded-full bg-lupin text-onaccent border-2 border-ink shadow-pop-sm pop-btn text-[10px] font-bold flex items-center justify-center'
         >
           {count}
         </motion.span>
@@ -61,7 +61,7 @@ const ShopMenu = () => {
             transition={{ duration: 0.15 }}
             className='absolute left-0 top-full pt-3 z-20'
           >
-            <ul className='w-[260px] bg-tertiary border border-ink/10 rounded-2xl shadow-card p-2'>
+            <ul className='w-[260px] bg-tertiary border border-ink/10 rounded-2xl shadow-pop p-2'>
               {products.map((p) => (
                 <li key={p.id}>
                   <Link
@@ -183,7 +183,7 @@ const Navbar = () => {
                 initial={{ opacity: 0, y: -8 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -8 }}
-                className='xl:hidden max-w-7xl mx-auto mt-3 bg-tertiary border border-ink/10 rounded-2xl shadow-card p-5 max-h-[70vh] overflow-y-auto'
+                className='xl:hidden max-w-7xl mx-auto mt-3 bg-tertiary border border-ink/10 rounded-2xl shadow-pop p-5 max-h-[70vh] overflow-y-auto'
               >
                 <ul className='grid gap-1'>
                   {navLinks.map((item) => (

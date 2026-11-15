@@ -64,7 +64,7 @@ const Calculator = () => {
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Smart nutrition</p>
         <h2 className={`${styles.sectionHeadText} mt-3`}>
-          How much protein <span className='text-gold'>do you need?</span>
+          How much protein <span className='marker'>do you need?</span>
         </h2>
         <p className={`${styles.body} mt-3 max-w-2xl`}>
           Pick your goal, activity and weight to estimate your daily protein, and see how a NUTRUMMY bowl fits in.
@@ -137,7 +137,7 @@ const Calculator = () => {
                 add(result.product.id, result.product.packs[0].id);
                 setAdded(true);
               }}
-              className='mt-4 inline-flex items-center gap-1.5 bg-lupin text-onaccent text-[13px] font-bold px-4 py-2.5 rounded-full hover:bg-[#F5F1E8]'
+              className='mt-4 inline-flex items-center gap-1.5 bg-lupin text-onaccent border-2 border-ink shadow-pop-sm pop-btn text-[13px] font-bold px-4 py-2.5 rounded-full hover:bg-[#F5F1E8]'
             >
               {added ? "View cart" : `Add to cart · ${formatINR(result.product.packs[0].price)}`}
               <Icon name='arrow' className='w-4 h-4' strokeWidth={2.25} />

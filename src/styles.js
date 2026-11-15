@@ -11,9 +11,9 @@ const styles = {
   sectionHeadText:
     "font-display text-cream font-extrabold md:text-[46px] sm:text-[40px] xs:text-[34px] text-[30px] leading-[1.1] tracking-[-0.025em]",
   sectionSubText:
-    "sm:text-[13px] text-[12px] text-gold uppercase tracking-[0.22em] font-semibold",
+    "inline-block bg-ink text-sun px-3.5 py-1.5 rounded-full text-[11px] sm:text-[12px] uppercase tracking-[0.2em] font-bold",
   body: "text-secondary text-[16px] sm:text-[17px] leading-[28px] sm:leading-[30px]",
-  card: "bg-tertiary rounded-2xl border border-ink/10 shadow-card",
+  card: "bg-tertiary rounded-3xl border-2 border-ink shadow-pop",
 };
 
 export { styles };

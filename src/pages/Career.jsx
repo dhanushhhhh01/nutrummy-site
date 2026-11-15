@@ -65,7 +65,7 @@ const Career = () => {
       <section className={`${styles.paddingX} max-w-7xl mx-auto pb-24 grid lg:grid-cols-[1fr_1.2fr] gap-12`}>
         <div>
           <h2 className={styles.sectionHeadText}>
-            Think you would <span className='text-gold'>fit in?</span>
+            Think you would <span className='marker'>fit in?</span>
           </h2>
           <p className={`${styles.body} mt-4`}>{careers.closing}</p>
           <p className={`${styles.body} mt-4`}>Even if your exact role isn't listed, drop us a line.</p>
@@ -115,7 +115,7 @@ const Career = () => {
               {status.text}
             </p>
           )}
-          <button type='submit' className='w-full bg-lupin text-onaccent font-bold uppercase tracking-wider text-[13px] py-3.5 rounded-full hover:bg-ink hover:text-primary transition-colors'>
+          <button type='submit' className='w-full bg-lupin text-onaccent border-2 border-ink shadow-pop-sm pop-btn font-bold uppercase tracking-wider text-[13px] py-3.5 rounded-full hover:bg-ink hover:text-primary transition-colors'>
             Send introduction
           </button>
         </form>

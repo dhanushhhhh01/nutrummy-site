@@ -141,7 +141,7 @@ const BotProduct = ({ id }) => {
           add(p.id, p.packs[0].id);
           setAdded(true);
         }}
-        className={`text-[12px] font-bold px-3 py-1.5 rounded-full shrink-0 ${added ? "bg-cream text-primary" : "bg-lupin text-onaccent"}`}
+        className={`text-[12px] font-bold px-3 py-1.5 rounded-full shrink-0 ${added ? "bg-cream text-primary" : "bg-lupin text-onaccent border-2 border-ink shadow-pop-sm pop-btn"}`}
       >
         {added ? "View cart" : "Add"}
       </button>
@@ -205,7 +205,7 @@ const Chatbot = () => {
                 <div key={i} className={m.from === "user" ? "flex justify-end" : ""}>
                   <div
                     className={`max-w-[88%] rounded-2xl px-3.5 py-2.5 text-[14px] leading-[21px] whitespace-pre-line ${
-                      m.from === "user" ? "bg-lupin text-onaccent rounded-br-md" : "bg-tertiary text-cream border border-ink/10 rounded-bl-md"
+                      m.from === "user" ? "bg-lupin text-onaccent border-2 border-ink shadow-pop-sm pop-btn rounded-br-md" : "bg-tertiary text-cream border border-ink/10 rounded-bl-md"
                     }`}
                   >
                     {m.text}
@@ -271,7 +271,7 @@ const Chatbot = () => {
               <button
                 type='submit'
                 aria-label='Send'
-                className='w-10 h-10 rounded-full bg-lupin text-onaccent flex items-center justify-center hover:bg-ink hover:text-primary shrink-0'
+                className='w-10 h-10 rounded-full bg-lupin text-onaccent border-2 border-ink shadow-pop-sm pop-btn flex items-center justify-center hover:bg-ink hover:text-primary shrink-0'
               >
                 <Icon name='arrow' className='w-4 h-4' strokeWidth={2.5} />
               </button>

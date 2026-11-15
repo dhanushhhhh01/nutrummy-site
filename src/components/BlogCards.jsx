@@ -13,7 +13,7 @@ const BlogCards = ({ exclude }) => (
         <Link
           key={b.slug}
           to={`/blog/${b.slug}`}
-          className='group bg-tertiary rounded-2xl border border-ink/10 shadow-card overflow-hidden flex flex-col hover:border-gold/50 transition-colors'
+          className='group bg-tertiary rounded-2xl border-2 border-ink shadow-pop overflow-hidden flex flex-col hover:border-gold/50 transition-colors'
         >
           <div className={`h-40 flex items-end p-6 ${i % 2 ? "bg-ink" : "bg-lupin"}`}>
             <p className={`font-display font-extrabold text-[30px] leading-none tracking-[-0.02em] ${i % 2 ? "text-[#F5F1E8]" : "text-onaccent"}`}>

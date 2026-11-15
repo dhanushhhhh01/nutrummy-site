@@ -10,7 +10,7 @@ const Faq = () => {
     <section aria-labelledby='faq-heading'>
       <p className={styles.sectionSubText}>FAQ</p>
       <h2 id='faq-heading' className={`${styles.sectionHeadText} mt-3`}>
-        Lupin, <span className='text-gold'>answered.</span>
+        Lupin, <span className='marker'>answered.</span>
       </h2>
       <div className='mt-8 divide-y divide-ink/10 border-y border-ink/10'>
         {faqs.map((f, i) => {

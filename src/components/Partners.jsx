@@ -18,7 +18,7 @@ const Partners = () => (
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>For business</p>
         <h2 className={`${styles.sectionHeadText} mt-3`}>
-          Partner with <span className='text-gold'>NUTRUMMY.</span>
+          Partner with <span className='marker'>NUTRUMMY.</span>
         </h2>
       </motion.div>
       <motion.p variants={fadeIn("", "", 0.1, 1)} className={styles.body}>

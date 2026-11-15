@@ -51,7 +51,7 @@ const RelatedProducts = ({ ids }) => {
                   add(p.id, p.packs[0].id);
                   open();
                 }}
-                className='mt-4 self-start bg-lupin text-onaccent text-[12px] font-bold uppercase tracking-wider px-4 py-2 rounded-full hover:bg-[#F5F1E8]'
+                className='mt-4 self-start bg-lupin text-onaccent border-2 border-ink shadow-pop-sm pop-btn text-[12px] font-bold uppercase tracking-wider px-4 py-2 rounded-full hover:bg-[#F5F1E8]'
               >
                 Add to cart
               </button>

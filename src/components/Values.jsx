@@ -24,7 +24,7 @@ const blocks = [
     points: ["Complete amino acids", "22g fibre / 100g", "Ultra-low GI"],
     cta: { label: "See the nutrition", href: "#compare" },
     stat: { value: "35g", label: "protein per 100g" },
-    tone: "bg-lupin text-onaccent",
+    tone: "bg-tangerine text-ink",
   },
 ];
 
@@ -34,7 +34,7 @@ const Values = () => (
       <motion.div
         key={b.title}
         variants={fadeIn(i % 2 ? "left" : "right", "spring", 0.1, 0.8)}
-        className={`grid md:grid-cols-2 rounded-3xl overflow-hidden border border-ink/10 shadow-card ${i % 2 ? "md:[direction:rtl]" : ""}`}
+        className={`grid md:grid-cols-2 rounded-3xl overflow-hidden border-2 border-ink shadow-pop-lg ${i % 2 ? "md:[direction:rtl]" : ""}`}
       >
         <div className={`${b.tone} p-10 sm:p-14 flex flex-col justify-center items-start [direction:ltr]`}>
           <p className='font-display font-extrabold text-[88px] sm:text-[112px] leading-none tracking-[-0.04em]'>{b.stat.value}</p>
@@ -53,7 +53,7 @@ const Values = () => (
           </ul>
           <a
             href={b.cta.href}
-            className='mt-8 inline-flex items-center gap-2 bg-lupin text-onaccent text-[13px] font-bold uppercase tracking-wider px-6 py-3.5 rounded-full hover:bg-ink hover:text-primary transition-colors'
+            className='mt-8 inline-flex items-center gap-2 bg-lupin text-onaccent border-2 border-ink shadow-pop-sm pop-btn text-[13px] font-bold uppercase tracking-wider px-6 py-3.5 rounded-full hover:bg-ink hover:text-primary transition-colors'
           >
             {b.cta.label} <Icon name='arrow' className='w-4 h-4' strokeWidth={2.25} />
           </a>

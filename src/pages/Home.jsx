@@ -17,6 +17,7 @@ import {
 } from "../components";
 import BlogCards from "../components/BlogCards";
 import Calculator from "../components/Calculator";
+import Band from "../components/Band";
 import { styles } from "../styles";
 
 const JournalTeaser = () => (
@@ -25,7 +26,7 @@ const JournalTeaser = () => (
       <div>
         <p className={styles.sectionSubText}>The NUTRUMMY journal</p>
         <h2 className={`${styles.sectionHeadText} mt-3`}>
-          Food innovation & <span className='text-gold'>everyday nutrition.</span>
+          Food innovation & <span className='marker'>everyday nutrition.</span>
         </h2>
       </div>
       <Link to='/blog' className='text-gold font-bold text-[14px] hover:underline'>
@@ -43,17 +44,35 @@ const Home = () => (
     <div className='hero-glow grain relative'>
       <Hero />
     </div>
-    <About />
-    <Works />
-    <Values />
-    <Reviews />
+    <Band color='#FFF1C2'>
+      <About />
+    </Band>
+    <div className='relative'>
+      <Band color='#FF8A3D' innerClassName='fire-band'>
+        <Works />
+      </Band>
+    </div>
+    <Band color='#DCEEFF'>
+      <Values />
+    </Band>
+    <Band color='#ECE5FF'>
+      <Reviews />
+    </Band>
     <Experience />
-    <Tech />
+    <Band color='#D9F2D6'>
+      <Tech />
+    </Band>
     <Compare />
-    <Calculator />
+    <Band color='#FFE0CC'>
+      <Calculator />
+    </Band>
     <Recipes />
-    <JournalTeaser />
-    <Partners />
+    <Band color='#FFF1C2'>
+      <JournalTeaser />
+    </Band>
+    <Band color='#DCEEFF'>
+      <Partners />
+    </Band>
     <div className='relative z-0'>
       <Contact />
       <GrainsCanvas />

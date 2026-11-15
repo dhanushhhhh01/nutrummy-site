@@ -13,7 +13,7 @@ const RecipeCard = ({ title, time, protein, text, highlights, category, productI
   const [added, setAdded] = useState(false);
   const product = products.find((p) => p.id === productId);
   return (
-    <div className='bg-tertiary p-7 rounded-2xl border border-ink/10 shadow-card flex flex-col h-full'>
+    <div className='bg-tertiary p-7 rounded-2xl border-2 border-ink shadow-pop flex flex-col h-full'>
       <div className='flex items-center justify-between text-[13px]'>
         <span className='text-[11px] font-bold uppercase tracking-[0.16em] text-gold'>{category}</span>
         <span className='inline-flex items-center gap-1.5 text-secondary'>
@@ -43,7 +43,7 @@ const RecipeCard = ({ title, time, protein, text, highlights, category, productI
             }}
             aria-label={added ? "View cart" : `Get ${product.name} for this recipe`}
             className={`inline-flex items-center gap-1 text-[13px] font-bold px-3.5 py-2 rounded-full transition-colors ${
-              added ? "bg-ink text-primary" : "bg-lupin text-onaccent hover:bg-ink hover:text-primary"
+              added ? "bg-ink text-primary" : "bg-lupin text-onaccent border-2 border-ink shadow-pop-sm pop-btn hover:bg-ink hover:text-primary"
             }`}
           >
             {added ? "View cart" : "Get mix"} <Icon name='arrow' className='w-3.5 h-3.5' strokeWidth={2.5} />
@@ -63,7 +63,7 @@ const Recipes = () => {
         <motion.div variants={textVariant()}>
           <p className={styles.sectionSubText}>Morning kitchen inspo</p>
           <h2 className={`${styles.sectionHeadText} mt-3`}>
-            Breakfast inspiration <span className='text-gold'>& recipes.</span>
+            Breakfast inspiration <span className='marker'>& recipes.</span>
           </h2>
           <p className={`${styles.body} mt-3 max-w-2xl`}>
             Quick, effortless morning bowls and weekend bakes, designed to make high-protein eating feel like an

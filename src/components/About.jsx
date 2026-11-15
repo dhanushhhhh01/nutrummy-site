@@ -8,15 +8,17 @@ import { SectionWrapper } from "../hoc";
 import { fadeIn, textVariant } from "../utils/motion";
 import Icon from "./Icon";
 
+const PILLAR_COLOURS = ["#FFC93C", "#5CC46A", "#6FB8FF"];
+
 const PillarCard = ({ index, label, title, text, icon }) => (
   <Tilt options={{ max: 10, scale: 1, speed: 450 }} className='w-full h-full'>
     <motion.div
       variants={fadeIn("up", "spring", index * 0.2, 0.75)}
       className={`${styles.card} relative overflow-hidden p-8 h-full flex flex-col`}
     >
-      <div className='absolute top-0 left-8 right-8 h-[3px] bg-lupin' />
+      
       <div className='flex items-center gap-3'>
-        <div className='w-11 h-11 rounded-xl bg-lupin/20 flex items-center justify-center text-gold'>
+        <div className='w-11 h-11 rounded-xl border-2 border-ink flex items-center justify-center text-ink' style={{ backgroundColor: PILLAR_COLOURS[index % 3] }}>
           <Icon name={icon} className='w-5 h-5' />
         </div>
         <p className='text-gold text-[12px] font-bold uppercase tracking-[0.2em]'>{label}</p>
@@ -33,7 +35,7 @@ const About = () => (
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Our story</p>
         <h2 className={`${styles.sectionHeadText} mt-3`}>
-          Healthy food got complicated. <span className='text-gold'>We made it simple.</span>
+          Healthy food got complicated. <span className='marker'>We made it simple.</span>
         </h2>
       </motion.div>
       <motion.div variants={fadeIn("", "", 0.1, 1)} className='space-y-4'>

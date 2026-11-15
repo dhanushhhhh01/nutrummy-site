@@ -20,7 +20,7 @@ const Newsletter = () => {
   };
 
   return (
-    <section className='bg-lupin text-onaccent'>
+    <section className='bg-lupin text-onaccent border-2 border-ink shadow-pop-sm pop-btn'>
       <div className={`max-w-7xl mx-auto ${styles.paddingX} py-14 grid md:grid-cols-[1.2fr_1fr] gap-8 items-center`}>
         <div>
           <p className='text-[12px] font-bold uppercase tracking-[0.25em] opacity-90'>Never miss a morning</p>

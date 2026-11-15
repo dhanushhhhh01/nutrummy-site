@@ -33,7 +33,7 @@ const App = () => (
   <BrowserRouter basename={import.meta.env.BASE_URL}>
     <CartProvider>
       <ScrollManager />
-      <div className='relative z-0 bg-primary min-h-screen'>
+      <div className='relative z-0 min-h-screen'>
         <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />

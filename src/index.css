@@ -12,9 +12,12 @@
   color-scheme: light;
 }
 
+html {
+  background: #F5F1E8;
+}
+
 html,
 body {
-  background: #F5F1E8;
   color: #1A2E35;
   font-family: "Plus Jakarta Sans", system-ui, sans-serif;
   overflow-x: hidden;
@@ -110,4 +113,82 @@ body {
   to {
     transform: rotate(360deg);
   }
+}
+
+/* ---------- Colourful / playful layer ---------- */
+
+/* Highlighter-marker emphasis for heading words */
+.marker {
+  background: linear-gradient(transparent 58%, #ffc93c 58%, #ffc93c 92%, transparent 92%);
+  padding: 0 0.12em;
+  margin: 0 -0.06em;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* Soft colour blobs behind the hero */
+.blob {
+  position: absolute;
+  border-radius: 9999px;
+  filter: blur(60px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+/* Round "sticker" badges */
+.sticker {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 9999px;
+  border: 2px solid #003b4a;
+  box-shadow: 3px 3px 0 0 #003b4a;
+  font-weight: 800;
+  line-height: 1;
+  text-align: center;
+}
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(-8deg); }
+  50% { transform: rotate(4deg); }
+}
+.wobble { animation: wobble 4s ease-in-out infinite; }
+
+/* Pop buttons: press-in effect */
+.pop-btn {
+  transition: transform 0.12s ease, box-shadow 0.12s ease, background-color 0.15s ease, color 0.15s ease;
+}
+.pop-btn:hover { transform: translate(-1px, -1px); box-shadow: 4px 4px 0 0 #003b4a; }
+.pop-btn:active { transform: translate(2px, 2px); box-shadow: 0 0 0 0 #003b4a; }
+
+.marquee-reverse { animation-direction: reverse; }
+
+@media (prefers-reduced-motion: reduce) {
+  .wobble { animation: none; }
+}
+
+/* Faint orange "constellation" line pattern behind the page (as on the reference site) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.35;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='420' height='420' viewBox='0 0 420 420'><g fill='none' stroke='%23F2A65A' stroke-width='1'><path d='M20 60 L120 30 L210 90 L320 40 L400 110'/><path d='M120 30 L150 160 L60 220 L20 60'/><path d='M210 90 L150 160 L260 210 L320 40'/><path d='M260 210 L380 260 L400 110'/><path d='M60 220 L110 330 L230 300 L260 210'/><path d='M230 300 L340 380 L380 260'/><path d='M110 330 L40 400'/></g><g fill='%23F2A65A'><circle cx='120' cy='30' r='2.5'/><circle cx='210' cy='90' r='2.5'/><circle cx='150' cy='160' r='2.5'/><circle cx='260' cy='210' r='2.5'/><circle cx='60' cy='220' r='2.5'/><circle cx='230' cy='300' r='2.5'/><circle cx='380' cy='260' r='2.5'/><circle cx='320' cy='40' r='2.5'/></g></svg>");
+}
+
+/* Animated warm gradient band (the reference's orange catalogue backdrop) */
+.fire-band {
+  background: linear-gradient(120deg, #ff8a3d, #ffb347, #ff6f3c, #ffc93c, #ff8a3d);
+  background-size: 300% 300%;
+  animation: fireShift 14s ease-in-out infinite;
+}
+@keyframes fireShift {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fire-band { animation: none; }
 }

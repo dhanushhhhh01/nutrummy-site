@@ -46,7 +46,7 @@ const Compare = () => (
       <motion.div variants={textVariant()}>
         <p className={styles.sectionSubText}>Nutrition, compared</p>
         <h2 className={`${styles.sectionHeadText} mt-3`}>
-          The numbers <span className='text-gold'>speak for themselves.</span>
+          The numbers <span className='marker'>speak for themselves.</span>
         </h2>
       </motion.div>
       <motion.p variants={fadeIn("", "", 0.1, 1)} className={styles.body}>

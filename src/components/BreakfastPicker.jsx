@@ -44,7 +44,7 @@ const BreakfastPicker = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -8 }}
           transition={{ duration: 0.2 }}
-          className='mt-4 flex items-center gap-4 bg-tertiary/90 backdrop-blur border border-ink/10 rounded-2xl p-3 pr-4 shadow-card'
+          className='mt-4 flex items-center gap-4 bg-tertiary/90 backdrop-blur border border-ink/10 rounded-2xl p-3 pr-4 shadow-pop'
         >
           <div className='w-14 h-16 shrink-0 rounded-lg bg-primary flex items-center justify-center overflow-hidden'>
             <ProductImage product={p} size='thumb' className='w-full h-full' />
@@ -64,7 +64,7 @@ const BreakfastPicker = () => {
               setAdded(true);
             }}
             className={`shrink-0 inline-flex items-center gap-1.5 text-[13px] font-bold px-4 py-2.5 rounded-full transition-colors ${
-              added ? "bg-ink text-primary" : "bg-lupin text-onaccent hover:bg-ink hover:text-primary"
+              added ? "bg-ink text-primary" : "bg-lupin text-onaccent border-2 border-ink shadow-pop-sm pop-btn hover:bg-ink hover:text-primary"
             }`}
           >
             {added ? (
@@ -72,7 +72,11 @@ const BreakfastPicker = () => {
                 <Icon name='check' className='w-4 h-4' strokeWidth={2.5} /> View cart
               </>
             ) : (
-              <>Quick add · {formatINR(p.packs[0].price)}</>
+              <>
+                <span className='xs:hidden'>Add · </span>
+                <span className='hidden xs:inline'>Quick add · </span>
+                {formatINR(p.packs[0].price)}
+              </>
             )}
           </button>
         </motion.div>

@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
-// Cream and teal from the live NUTRUMMY reference site, with golden-lupin accents (no pink). Token names are kept from the original
+// Cream and teal from the live NUTRUMMY reference site plus a bright, playful secondary palette
+// (sun, tangerine, leaf, sky, lilac). Cards and buttons use teal outlines with offset 'pop' shadows. Token names are kept from the original
 // template so components didn't need renaming; read them by role:
 //   primary   = page background (cream #F5F1E8)   cream / ink = text and dark bands (teal #003B4A)
 //   tertiary  = card surface (white)              gold  = amber text accent (#8A5100)
@@ -17,9 +18,20 @@ module.exports = {
         secondary: "#4A5D63",
         tertiary: "#FFFFFF",
         gold: "#8A5100",
-        lupin: "#F5B82E",
+        lupin: "#FFC93C",
         onaccent: "#003B4A",
-        mango: "#F5B82E",
+        mango: "#FFC93C",
+        // Colourful secondary palette (teal text passes AA on all of these)
+        sun: "#FFC93C",
+        "sun-soft": "#FFF1C2",
+        tangerine: "#FF8A3D",
+        "tangerine-soft": "#FFE0CC",
+        leaf: "#5CC46A",
+        "leaf-soft": "#D9F2D6",
+        sky: "#6FB8FF",
+        "sky-soft": "#DCEEFF",
+        lilac: "#B9A3FF",
+        "lilac-soft": "#ECE5FF",
         cream: "#003B4A",
         ink: "#003B4A",
         berry: "#B42318",
@@ -33,7 +45,10 @@ module.exports = {
         sans: ['"Plus Jakarta Sans"', "system-ui", "sans-serif"],
       },
       boxShadow: {
-        card: "0 1px 2px rgba(61,26,77,0.04), 0 12px 32px -12px rgba(61,26,77,0.14)",
+        card: "6px 6px 0 0 #003B4A",
+        pop: "6px 6px 0 0 #003B4A",
+        "pop-sm": "3px 3px 0 0 #003B4A",
+        "pop-lg": "10px 10px 0 0 #003B4A",
         glow: "0 10px 30px -10px rgba(255,107,26,0.55)",
       },
       screens: {

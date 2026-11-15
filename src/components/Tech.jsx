@@ -18,7 +18,7 @@ const Tech = () => {
       <motion.div variants={textVariant()} className='text-center'>
         <p className={styles.sectionSubText}>Honest sourcing</p>
         <h2 className={`${styles.sectionHeadText} mt-3`}>
-          Every ingredient <span className='text-gold'>has a purpose.</span>
+          Every ingredient <span className='marker'>has a purpose.</span>
         </h2>
         <p className={`${styles.body} mt-4 max-w-2xl mx-auto`}>
           No fillers. No hidden sugars. Tap any ingredient to explore why it earned its place inside the
@@ -60,10 +60,10 @@ const Tech = () => {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -12 }}
           transition={{ duration: 0.25 }}
-          className='mt-12 grid md:grid-cols-[0.8fr_1.2fr] rounded-3xl overflow-hidden border border-ink/10 shadow-card'
+          className='mt-12 grid md:grid-cols-[0.8fr_1.2fr] rounded-3xl overflow-hidden border-2 border-ink shadow-pop'
         >
           <div className='bg-ink text-[#F5F1E8] p-8 sm:p-10 flex flex-col justify-center'>
-            <span className='self-start text-[11px] font-bold uppercase tracking-[0.18em] bg-lupin text-onaccent px-3 py-1 rounded-full'>
+            <span className='self-start text-[11px] font-bold uppercase tracking-[0.18em] bg-lupin text-onaccent border-2 border-ink shadow-pop-sm pop-btn px-3 py-1 rounded-full'>
               {ing.badge}
             </span>
             <p className='mt-5 font-display font-extrabold text-[30px] sm:text-[36px] leading-tight tracking-[-0.02em]'>{ing.name}</p>

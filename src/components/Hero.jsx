@@ -8,7 +8,26 @@ import Icon from "./Icon";
 
 const Hero = () => {
   return (
-    <section className='relative w-full min-h-[100svh] mx-auto overflow-hidden lg:pb-28'>
+    <section className='relative w-full min-h-[100svh] mx-auto overflow-hidden lg:pb-32'>
+      {/* Colour blobs */}
+      <div className='blob w-[420px] h-[420px] bg-sun -top-20 -left-24' />
+      <div className='blob w-[360px] h-[360px] bg-sky top-[30%] right-[8%]' />
+      <div className='blob w-[300px] h-[300px] bg-tangerine bottom-10 left-[35%]' />
+      <div className='blob w-[260px] h-[260px] bg-leaf top-[12%] right-[38%] opacity-40' />
+
+      {/* Stickers */}
+      <div className='hidden lg:block absolute z-10 right-[6%] top-[150px] pointer-events-none'>
+        <div className='sticker wobble bg-sun text-ink w-[118px] h-[118px]'>
+          <span className='text-[34px]'>35g</span>
+          <span className='text-[11px] tracking-wider mt-1'>PROTEIN</span>
+        </div>
+      </div>
+      <div className='hidden lg:block absolute z-10 right-[44%] bottom-[150px] pointer-events-none'>
+        <div className='sticker bg-leaf text-ink w-[104px] h-[104px] rotate-[10deg]'>
+          <span className='text-[15px]'>ZERO</span>
+          <span className='text-[20px] mt-0.5'>MAIDA</span>
+        </div>
+      </div>
       <div
         className={`relative max-w-7xl mx-auto ${styles.paddingX} pt-[140px] lg:pt-[150px] flex flex-row items-start gap-5 pointer-events-none`}
       >
@@ -23,7 +42,7 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className='min-w-0 flex-1 lg:flex-none lg:max-w-[540px] pointer-events-auto'
         >
-          <div className='inline-flex items-center gap-2 text-[13px] text-cream bg-ink/[0.04] border border-ink/10 rounded-full pl-2 pr-4 py-1.5 mb-7'>
+          <div className='inline-flex items-center gap-2 text-[13px] text-cream bg-tertiary border-2 border-ink shadow-pop-sm rounded-full pl-2 pr-4 py-1.5 mb-7'>
             <span className='flex text-mango'>
               {[...Array(5)].map((_, i) => (
                 <Icon key={i} name='star' filled className='w-3.5 h-3.5' strokeWidth={0} />
@@ -34,7 +53,7 @@ const Hero = () => {
           </div>
 
           <h1 className={styles.heroHeadText}>
-            Make your <span className='text-gold'>mornings</span> matter.
+            Make your <span className='marker'>mornings</span> matter.
           </h1>
 
           <p className={`${styles.heroSubText} mt-6 max-w-[480px]`}>
@@ -46,13 +65,13 @@ const Hero = () => {
           <div className='mt-9 flex flex-wrap gap-3'>
             <a
               href='#products'
-              className='inline-flex items-center gap-2 bg-lupin text-onaccent font-semibold px-7 py-3.5 rounded-full hover:bg-ink hover:text-primary transition-colors'
+              className='inline-flex items-center gap-2 bg-lupin text-onaccent border-2 border-ink shadow-pop-sm pop-btn font-semibold px-7 py-3.5 rounded-full hover:bg-ink hover:text-primary transition-colors'
             >
               Explore products <Icon name='arrow' className='w-4 h-4' strokeWidth={2.25} />
             </a>
             <a
               href='#partners'
-              className='border border-cream/25 text-cream font-medium px-7 py-3.5 rounded-full hover:border-gold hover:text-gold transition-colors'
+              className='bg-tertiary border-2 border-ink shadow-pop-sm pop-btn text-cream font-semibold px-7 py-3.5 rounded-full hover:bg-sky'
             >
               Partner with us
             </a>
@@ -63,19 +82,31 @@ const Hero = () => {
       </div>
 
       {/* 3D bowl scene: below the copy on phones, beside it on desktop */}
-      <div className='relative w-full h-[340px] sm:h-[420px] mb-14 lg:mb-0 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[58%] lg:h-full'>
+      <div className='relative w-full h-[340px] sm:h-[420px] mb-28 lg:mb-0 lg:absolute lg:inset-y-0 lg:right-0 lg:w-[58%] lg:h-full'>
         <BowlCanvas />
       </div>
 
-      {/* Claims strip */}
-      <div className='absolute bottom-0 inset-x-0 bg-ink py-3.5 overflow-hidden'>
-        <div className='marquee'>
-          {[...claims, ...claims, ...claims, ...claims].map((c, i) => (
-            <span key={i} className='flex items-center text-[12px] font-semibold uppercase tracking-[0.18em] text-primary whitespace-nowrap'>
-              <span className='w-1.5 h-1.5 rounded-full bg-mango mx-7' />
-              {c}
-            </span>
-          ))}
+      {/* Tilted two-colour claims marquee */}
+      <div className='absolute bottom-6 inset-x-[-4%] -rotate-[1.5deg] pointer-events-none'>
+        <div className='bg-ink border-y-2 border-ink py-3 overflow-hidden'>
+          <div className='marquee'>
+            {[...claims, ...claims, ...claims, ...claims].map((c, i) => (
+              <span key={i} className='flex items-center text-[13px] font-extrabold uppercase tracking-[0.16em] text-sun whitespace-nowrap'>
+                <span className='mx-6 text-[16px]' aria-hidden>✦</span>
+                {c}
+              </span>
+            ))}
+          </div>
+        </div>
+        <div className='bg-sun border-y-2 border-ink py-2 overflow-hidden rotate-[3deg] -mt-1'>
+          <div className='marquee marquee-reverse'>
+            {[...claims, ...claims, ...claims, ...claims].map((c, i) => (
+              <span key={i} className='flex items-center text-[12px] font-extrabold uppercase tracking-[0.16em] text-ink whitespace-nowrap'>
+                <span className='mx-6' aria-hidden>●</span>
+                {c}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </section>
